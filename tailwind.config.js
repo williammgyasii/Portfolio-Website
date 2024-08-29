@@ -3,6 +3,13 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      padding: {
+        huge: "4rem",
+        minus:"-7rem"
+      },
+      margin: {
+        minus: "-7rem",
+      },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
         sans: ["Poppins", "sans-serif"],

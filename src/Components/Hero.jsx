@@ -1,7 +1,7 @@
 import React from "react";
 
 const Hero = () => {
-  return <div>I am the hero section</div>;
+  return <div className="h-11 py-huge">I am the hero section</div>;
 };
 
 export default Hero;
