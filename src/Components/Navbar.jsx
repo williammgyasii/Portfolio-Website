@@ -7,14 +7,15 @@ const CustomLink = ({ href, title, className = "" }) => {
   const location = useLocation();
   const currentPath = location.pathname;
 
-  console.log(currentPath)
+  console.log(currentPath);
 
   return (
     <a href={href} className={`${className} relative group text-sm`}>
       {title}
       <span
-        className="h-[1px] inline-block w-0 bg-yellow-400 absolute left-0 -bottom-0.5
-      group-hover:w-full transition-[width] ease duration-300"
+        className={`h-[1px] inline-block w-0 bg-yellow-400 absolute left-0 -bottom-0.5
+      group-hover:w-full transition-[width] ease duration-300
+      ${currentPath === href ? "w-full" : "w-0"}`}
       >
         &nbsp;
       </span>
