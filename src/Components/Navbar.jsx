@@ -1,8 +1,14 @@
 import React from "react";
 import Logo from "./Logo";
 import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 const CustomLink = ({ href, title, className = "" }) => {
+  const location = useLocation();
+  const currentPath = location.pathname;
+
+  console.log(currentPath)
+
   return (
     <a href={href} className={`${className} relative group text-sm`}>
       {title}
