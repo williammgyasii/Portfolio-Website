@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "./Logo";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
+import { IoLogoGithub } from "react-icons/io5";
 
 const CustomLink = ({ href, title, className = "" }) => {
   const location = useLocation();
@@ -36,7 +37,7 @@ const Navbar = () => {
 
       <nav>
         <a href="/" target="_blank">
-          Twitter
+          <IoLogoGithub />
         </a>
         <s href="/" target="_blank">
           Twitter
