@@ -113,9 +113,8 @@ const Navbar = () => {
       }}
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.35, ease: "easeInOut" }}
-      className={`w-4/5 sm:w-full p-1 fixed ${
-        isScrolled ? "bg-primaryDark" : "bg-transparent"
-      } top-0 font-normal flex items-center justify-between rounded-bl-lg rounded-br-lg  `}
+      className={`w-4/5 sm:w-full bg-dark p-1 fixed 
+       top-0 font-normal flex items-center justify-between rounded-bl-lg rounded-br-lg  `}
     >
       <button className="hidden sm:flex" onClick={handleClick}>
         <TbLayoutDashboardFilled size={25} color="#fff" />
