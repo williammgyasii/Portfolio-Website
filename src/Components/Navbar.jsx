@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Logo from "./Logo";
-import { AnimatePresence, motion } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useMotionValueEvent,
+  useScroll,
+} from "framer-motion";
 import { useLocation } from "react-router-dom";
 import { IoCloseSharp, IoLogoGithub, IoLogoTwitter } from "react-icons/io5";
 import { FaXTwitter } from "react-icons/fa6";
@@ -36,6 +41,17 @@ const navLinks = [
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scroll, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+    if (latest > previous && latest > 150) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
 
   const menuVars = {
     initial: {
@@ -51,32 +67,40 @@ const Navbar = () => {
     exit: {
       scaleY: 0,
       transition: {
+        delay: 0.5,
         duration: 0.5,
         ease: [0.22, 1, 0.36, 1],
       },
     },
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const containerVars = {
+    initial: {
+      transition: {
+        staggerChildren: 0.09,
+        staggerDirection: -1,
+      },
+    },
+    open: {
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.09,
+        staggerDirection: 1,
+      },
+    },
+  };
 
   const handleClick = () => {
     setOpen((prev) => !prev);
   };
   return (
-    <div
+    <motion.div
+      variant={{
+        visible: { y: 0 },
+        hidden: { y: "-100%" },
+      }}
+      animate={hidden ? "hidden" : "visible"}
+      transition={{ duration: 0.35, ease: "easeInOut" }}
       className={`w-full ${
         scroll ? "bg-white" : "bg-transparent"
       }  px-8  fixed font-normal flex items-center justify-between `}
@@ -101,7 +125,7 @@ const Navbar = () => {
           target="_blank"
           className="inline-block"
         >
-          <IoLogoGithub size={25} />
+          <IoLogoGithub size={20} />
         </motion.a>
         <motion.a
           className="inline-block w-6 mx-6"
@@ -110,7 +134,7 @@ const Navbar = () => {
           href="https://x.com/wk_gyasi"
           target="_blank"
         >
-          <RiTwitterXLine size={25} />
+          <RiTwitterXLine size={20} />
         </motion.a>
         <motion.a
           className="inline-block w-6 mr-3"
@@ -119,7 +143,7 @@ const Navbar = () => {
           href="https://www.linkedin.com/in/william-gyasi/"
           target="_blank"
         >
-          <BsLinkedin size={25} color="#0077B5" />
+          <BsLinkedin size={20} color="#0077B5" />
         </motion.a>
       </nav>
       {/* <button c/lassName="bg-dark rounded-sm p-2 text-white hidden sm:block" >Contact</button> */}
@@ -140,18 +164,32 @@ const Navbar = () => {
                 <IoCloseSharp size={25} />
               </button>
             </div>
-            <div className="flex flex-col mt-10 items-center w-full justify-center font-mono gap-4">
+            <motion.div
+              variants={containerVars}
+              initial="initial"
+              animate="open"
+              exit={"initial"}
+              className="flex flex-col mt-10 items-center w-full justify-center font-mono gap-4"
+            >
               {navLinks.map((link, index) => {
                 return (
-                  <MobileNavLink
-                    key={index}
-                    title={link.title}
-                    href={link.href}
-                  />
+                  <div className="overflow-hidden">
+                    <MobileNavLink
+                      key={index}
+                      title={link.title}
+                      href={link.href}
+                    />
+                  </div>
                 );
               })}
-            </div>
-            <nav className="mt-10 ">
+            </motion.div>
+            <motion.nav
+              variants={containerVars}
+              initial="initial"
+              animate="open"
+              exit={"initial"}
+              className="mt-10"
+            >
               <motion.a
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.9 }}
@@ -179,21 +217,40 @@ const Navbar = () => {
               >
                 <BsLinkedin size={25} color="#0077B5" />
               </motion.a>
-            </nav>
+            </motion.nav>
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
+};
+
+const mobileLinkVars = {
+  initial: {
+    y: "30vh",
+    transition: {
+      duration: 0.5,
+    },
+  },
+  open: {
+    y: 0,
+    transition: {
+      ease: [0, 0.55, 0.45, 1],
+      duration: 0.7,
+    },
+  },
 };
 
 const MobileNavLink = ({ title, href }) => {
   return (
-    <div className="text-5xl uppercase text-black">
+    <motion.div
+      variants={mobileLinkVars}
+      className="text-5xl uppercase text-black"
+    >
       <motion.a whileHover={{ scale: 0.9 }} href={href}>
         {title}
       </motion.a>
-    </div>
+    </motion.div>
   );
 };
 
