@@ -4,11 +4,12 @@ module.exports = {
   theme: {
     extend: {
       padding: {
-        huge: "4rem",
+        huge: "5rem",
         minus:"-7rem"
       },
       margin: {
         minus: "-7rem",
+        huge:"5rem"
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],

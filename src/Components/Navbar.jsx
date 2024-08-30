@@ -43,6 +43,18 @@ const Navbar = () => {
   const [scroll, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const { scrollY } = useScroll();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
@@ -95,26 +107,26 @@ const Navbar = () => {
   };
   return (
     <motion.div
-      variant={{
+      variants={{
         visible: { y: 0 },
         hidden: { y: "-100%" },
       }}
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.35, ease: "easeInOut" }}
-      className={`w-full ${
-        scroll ? "bg-white" : "bg-transparent"
-      }  px-8  fixed font-normal flex items-center justify-between `}
+      className={`w-4/5 sm:w-full p-1 fixed ${
+        isScrolled ? "bg-primaryDark" : "bg-transparent"
+      } top-0 font-normal flex items-center justify-between rounded-bl-lg rounded-br-lg  `}
     >
       <button className="hidden sm:flex" onClick={handleClick}>
-        <TbLayoutDashboardFilled size={25} color="#C5A642" />
+        <TbLayoutDashboardFilled size={25} color="#fff" />
       </button>
       <Logo />
 
       <nav className="sm:hidden">
-        <CustomLink href="/" title={"Home"} className="mr-4" />
-        <CustomLink href="/about" title={"About"} className="mx-4" />
-        <CustomLink href="/projects" title={"Projects"} className="mx-4" />
-        <CustomLink href="/articles" title={"Articles"} className="ml-4" />
+        <CustomLink href="/" title={"Home"} className="mr-2" />
+        <CustomLink href="/about" title={"About"} className="mx-2" />
+        <CustomLink href="/projects" title={"Projects"} className="mx-2" />
+        <CustomLink href="/articles" title={"Articles"} className="ml-2" />
       </nav>
 
       <nav className="mt-2 sm:hidden">
@@ -128,7 +140,7 @@ const Navbar = () => {
           <IoLogoGithub size={20} />
         </motion.a>
         <motion.a
-          className="inline-block w-6 mx-6"
+          className="inline-block w-6 mx-2"
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.9 }}
           href="https://x.com/wk_gyasi"

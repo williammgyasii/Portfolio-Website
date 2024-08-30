@@ -5,8 +5,9 @@ import Navbar from "../Components/Navbar";
 const HomePage = () => {
   return (
     <>
-      <header className="w-full min-h-screen">
+      <header className="w-full flex flex-col items-center justify-center min-h-screen">
         <Navbar />
+        <Hero />;
         <Hero />;
       </header>
     </>
