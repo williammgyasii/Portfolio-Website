@@ -107,7 +107,7 @@ export const AboutBlock = () => (
   <>
     <Block className="col-span-6 text-xl leading-snug">
       <p>
-        My journey in the tech world
+        Alter Egos
         <span className="text-zinc-400 text-sm">
           {" "}
           has been driven by a deep love for creating{" "}
