@@ -1,5 +1,5 @@
 // src/components/HeroSection.jsx
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   animate,
   motion,
@@ -9,22 +9,46 @@ import {
 import { FiArrowRightCircle } from "react-icons/fi";
 import { Canvas } from "@react-three/fiber";
 import svgLogo from "../Assets/welcome.svg";
-import StarryBackground from "../AnimatedComponents/StarryBackground";
+// import StarryBackground from "../AnimatedComponents/StarryBackground";
 import { useNavigate } from "react-router-dom";
+import StarryBackgoundHover from "../AnimatedComponents/StarryBackgoundHover";
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 
 const HeroSection = () => {
   const color = useMotionValue(COLORS_TOP[0]);
   const navigate = useNavigate();
+  const [mouse, setMouse] = useState({ x: 0, y: 0 });
+  const [rotationEnabled, setRotationEnabled] = React.useState(false);
+
+  const handleMouseEnter = () => {
+    setRotationEnabled(true);
+  };
+
+  const handleMouseLeave = () => {
+    setRotationEnabled(false);
+  };
 
   useEffect(() => {
+    const handleMouseMove = (event) => {
+      setMouse({
+        x: (event.clientX / window.innerWidth) * 2 - 1,
+        y: -(event.clientY / window.innerHeight) * 2 + 1,
+      });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
     animate(color, COLORS_TOP, {
       ease: "easeInOut",
       duration: 10,
       repeat: Infinity,
       repeatType: "mirror",
     });
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
   }, []);
 
   const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #020617 50%, ${color})`;
@@ -39,8 +63,12 @@ const HeroSection = () => {
       }}
       className=" flex justify-between  text-white w-full items-center h-screen "
     >
-      <StarryBackground />
+      {/* <StarryBackground /> */}
+      <StarryBackgoundHover mouse={mouse} rotationEnabled={rotationEnabled} />
+
       <motion.div
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         initial={{ y: 0 }}
         animate={{ y: [0, -10, 0] }} // Moving up and down
         transition={{
@@ -48,7 +76,7 @@ const HeroSection = () => {
           repeat: Infinity, // Looping the animation indefinitely
           ease: "easeInOut", // Smooth easing
         }}
-        className="flex flex-col w-3/5 mx-auto  sm:w-full   items-start justify-center xs:px-5 xs:mt-10"
+        className="flex flex-col w-3/5 mx-auto  sm:w-full  items-start justify-center xs:px-5 xs:mt-10"
       >
         <h1 className="text-7xl font-sans font-bold mb-2 sm:mb-0 xs:text-5xl inline-block">
           Hey, I'm William<span className="text-yellow-400">.</span>
