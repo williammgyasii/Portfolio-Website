@@ -12,7 +12,7 @@ import svgLogo from "../Assets/welcome.svg";
 // import StarryBackground from "../AnimatedComponents/StarryBackground";
 import { useNavigate } from "react-router-dom";
 import StarryBackgoundHover from "../AnimatedComponents/StarryBackgoundHover";
-import OpacityReveal from "./OpacityReveal";
+import OpacityReveal from "../AnimatedComponents/OpacityReveal";
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 
