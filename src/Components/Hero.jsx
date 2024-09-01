@@ -77,7 +77,7 @@ const HeroSection = () => {
             repeat: Infinity, // Looping the animation indefinitely
             ease: "easeInOut", // Smooth easing
           }}
-          className="flex flex-col w-3/5 mx-auto  sm:w-full  items-start justify-center xs:px-5 xs:mt-10"
+          className="flex flex-col w-3/5 mx-auto  sm:w-full  items-start justify-center md:px-3 xs:px-4 xs:mt-4"
         >
           <h1 className="text-7xl font-sans font-bold mb-2 sm:mb-0 xs:text-5xl inline-block">
             Hey, I'm William<span className="text-yellow-400">.</span>
