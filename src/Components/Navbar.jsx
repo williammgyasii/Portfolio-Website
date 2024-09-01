@@ -113,7 +113,7 @@ const Navbar = () => {
       }}
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.35, ease: "easeInOut" }}
-      className={`w-4/5 sm:w-full bg-dark p-1 fixed 
+      className={`w-4/5 sm:w-full bg-purple-500 text-white p-1 fixed 
        top-0 font-normal flex items-center justify-between rounded-bl-lg rounded-br-lg  `}
     >
       <button className="hidden sm:flex" onClick={handleClick}>
@@ -183,10 +183,11 @@ const Navbar = () => {
               className="flex flex-col mt-10 items-center w-full justify-center font-mono gap-4"
             >
               {navLinks.map((link, index) => {
+
                 return (
                   <div className="overflow-hidden">
                     <MobileNavLink
-                      key={index}
+                      key={index.toString()}
                       title={link.title}
                       href={link.href}
                     />
