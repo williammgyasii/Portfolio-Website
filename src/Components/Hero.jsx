@@ -61,7 +61,7 @@ const HeroSection = () => {
         backgroundImage,
         zIndex: 1,
       }}
-      className=" flex justify-between  text-white w-full items-center h-screen "
+      className=" flex justify-between text-white w-full items-center h-screen "
     >
       {/* <StarryBackground /> */}
       <StarryBackgoundHover mouse={mouse} rotationEnabled={rotationEnabled} />
