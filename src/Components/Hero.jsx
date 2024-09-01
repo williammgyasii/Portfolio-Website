@@ -12,7 +12,7 @@ import svgLogo from "../Assets/welcome.svg";
 // import StarryBackground from "../AnimatedComponents/StarryBackground";
 import { useNavigate } from "react-router-dom";
 import StarryBackgoundHover from "../AnimatedComponents/StarryBackgoundHover";
-import OpacityReveal from "./OpacityReveal";
+import OpacityReveal from "../AnimatedComponents/OpacityReveal";
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 
@@ -60,9 +60,9 @@ const HeroSection = () => {
     <motion.section
       style={{
         backgroundImage,
-        zIndex: 1,
+        zIndex: 10,
       }}
-      className=" flex justify-between text-white w-full items-center h-screen "
+      className=" flex justify-between relative text-white w-full items-center h-screen "
     >
       {/* <StarryBackground /> */}
       <StarryBackgoundHover mouse={mouse} rotationEnabled={rotationEnabled} />
@@ -77,7 +77,7 @@ const HeroSection = () => {
             repeat: Infinity, // Looping the animation indefinitely
             ease: "easeInOut", // Smooth easing
           }}
-          className="flex flex-col w-3/5 mx-auto  sm:w-full  items-start justify-center xs:px-5 xs:mt-10"
+          className="flex flex-col w-3/5 mx-auto  sm:w-full  items-start justify-center md:px-3 xs:px-4 xs:mt-4"
         >
           <h1 className="text-7xl font-sans font-bold mb-2 sm:mb-0 xs:text-5xl inline-block">
             Hey, I'm William<span className="text-yellow-400">.</span>
@@ -133,11 +133,7 @@ const HeroSection = () => {
           </div>
         </motion.div>
       </OpacityReveal>
-      {/* <div className="absolute inset-0 z-0">
-        <Canvas>
-          <GiStarShuriken radius={50} count={2500} factor={4} fade speed={2} />
-        </Canvas>
-      </div> */}
+
     </motion.section>
   );
 };
