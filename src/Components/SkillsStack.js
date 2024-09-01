@@ -4,55 +4,55 @@ import { SiTailwindcss, SiRedux, SiTypescript, SiWebpack, SiJest, SiNextdotjs, S
 const skillStack = [
   {
     name: "HTML",
-    icon: <FaHtml5 size={48} />
+    icon: <FaHtml5 size={25} />
   },
   {
     name: "CSS",
-    icon: <FaCss3Alt size={48} />
+    icon: <FaCss3Alt size={25} />
   },
   {
     name: "JavaScript",
-    icon: <FaJs size={48} />
+    icon: <FaJs size={25} />
   },
   {
     name: "React",
-    icon: <FaReact size={48} />
+    icon: <FaReact size={25} />
   },
   {
     name: "Tailwind CSS",
-    icon: <SiTailwindcss size={48} />
+    icon: <SiTailwindcss size={25} />
   },
   {
     name: "Redux",
-    icon: <SiRedux size={48} />
+    icon: <SiRedux size={25} />
   },
   {
     name: "TypeScript",
-    icon: <SiTypescript size={48} />
+    icon: <SiTypescript size={25} />
   },
   {
     name: "Sass",
-    icon: <FaSass size={48} />
+    icon: <FaSass size={25} />
   },
   {
     name: "Webpack",
-    icon: <SiWebpack size={48} />
+    icon: <SiWebpack size={25} />
   },
   {
     name: "Git",
-    icon: <FaGitAlt size={48} />
+    icon: <FaGitAlt size={25} />
   },
   {
     name: "Jest",
-    icon: <SiJest size={48} />
+    icon: <SiJest size={25} />
   },
   {
     name: "Next.js",
-    icon: <SiNextdotjs size={48} />
+    icon: <SiNextdotjs size={25} />
   },
   {
     name: "Firebase",
-    icon: <SiFirebase size={48} />
+    icon: <SiFirebase size={25} />
   }
 ];
 

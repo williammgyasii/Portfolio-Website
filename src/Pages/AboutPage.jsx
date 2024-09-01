@@ -4,6 +4,7 @@ import { useMotionTemplate, useMotionValue } from "framer-motion";
 import { motion } from "framer-motion";
 import Navbar from "../Components/Navbar";
 import AboutHeroIntro from "../Components/AboutIntro";
+import SkillsSection from "../Components/SkillsSection";
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 
 const AboutPage = () => {
@@ -24,7 +25,11 @@ const AboutPage = () => {
         }}
         className=" flex flex-col bg-green-700  text-white w-full  items-center min-h-screen "
       >
+        {/* //HERO SECTION */}
         <AboutHeroIntro />
+        {/* SKILLS */}
+        <SkillsSection />
+
       </motion.main>
 
       <StarryBackgroundNoHover />

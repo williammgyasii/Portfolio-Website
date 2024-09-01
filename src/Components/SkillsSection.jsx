@@ -37,7 +37,14 @@ const SkillsSection = () => {
   return (
     <motion.section
       style={{ zIndex: 10 }}
-      className="items-center flex flex-col justify-center mt-10 w-4/5 md:w-full"
+      initial={{ y: 0 }}
+      animate={{ y: [0, -10, 0] }} // Moving up and down
+      transition={{
+        duration: 3, // Duration of one cycle of the animation
+        repeat: Infinity, // Looping the animation indefinitely
+        ease: "easeInOut", // Smooth easing
+      }}
+      className="items-center flex flex-col justify-center pb-10 w-4/5 md:w-full"
     >
       <motion.h1
         style={{
@@ -56,7 +63,7 @@ const SkillsSection = () => {
         My Expertise
       </motion.h1>
 
-      <motion.div className="flex flex-wrap gap-4">
+      <motion.div className="flex flex-wrap justify-center gap-4">
         {skillStack.map((skill, index) => (
           <div
             key={index}

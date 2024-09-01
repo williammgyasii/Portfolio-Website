@@ -37,7 +37,7 @@ const AboutHeroSection = () => {
   return (
     <motion.section
       style={{ zIndex: 10 }}
-      className="items-center flex flex-col justify-center mt-huge w-4/5 md:w-full"
+      className="items-center flex flex-col justify-center h-screen mt-10 w-4/5 md:w-full"
     >
       <motion.h1
         style={{
@@ -69,8 +69,7 @@ const AboutHeroSection = () => {
         </motion.div>
       </div>
 
-      <SkillsSection />
-
+      
       {/* <motion.div
         style={{ borderBottom, borderTop: borderBottom }}
         className=" grid w-full rounded-md py-3 grid-cols-8 gap-8 mt-10"
