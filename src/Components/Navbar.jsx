@@ -128,7 +128,7 @@ const Navbar = () => {
         hidden: { y: "-100%" },
       }}
       animate={hidden ? "hidden" : "visible"}
-      style={{ boxShadow, zIndex: 2 }}
+      style={{ boxShadow, zIndex: 20 }}
       transition={{ duration: 0.35, ease: "easeInOut" }}
       className={`w-4/5 sm:w-full bg-transparent text-white p-1 fixed 
        top-0 font-normal flex items-center justify-between rounded-bl-lg rounded-br-lg  `}

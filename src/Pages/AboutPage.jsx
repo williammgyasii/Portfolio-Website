@@ -16,18 +16,19 @@ const AboutPage = () => {
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   return (
     <>
-      <StarryBackgroundNoHover />
       <header className="bg-red-500 w-full flex flex-col items-center justify-center">
         <Navbar />
       </header>
       <motion.main
         style={{
           backgroundImage,
-          zIndex: 1,
         }}
-        className=" flex flex-col  text-white w-full items-center min-h-screen "
+        className=" flex flex-col bg-green-700  text-white w-full  items-center min-h-screen "
       >
-        <motion.section className=" h-full w-full items-center justify-center mt-huge">
+        <motion.section
+          style={{ zIndex: 10 }}
+          className="items-center justify-center mt-xsHuge"
+        >
           <motion.h1
             style={{
               borderBottom,
@@ -38,12 +39,14 @@ const AboutPage = () => {
             whileTap={{
               scale: 0.985,
             }}
-            className="text-center inline-block text-7xl w-fit items-center gap-1.5 xs:text-xs rounded-md bg-gray-950/10 px-5 py-3 text-gray-50 transition-colors hover:bg-gray-950/50"
+            className="inline-block text-4xl items-center cursor-pointer xs:text-lg rounded-md bg-gray-950/10 px-4 py-3 text-gray-50 transition-colors hover:bg-gray-950/50"
           >
-            About
+            This is William Gyasi
           </motion.h1>
         </motion.section>
       </motion.main>
+
+      <StarryBackgroundNoHover />
     </>
   );
 };
