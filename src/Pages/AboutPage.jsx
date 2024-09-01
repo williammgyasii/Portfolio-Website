@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import StarryBackgroundNoHover from "../AnimatedComponents/StarryBackground";
-import AboutHeroSection from "../Components/AboutHeroSection";
 import { useMotionTemplate, useMotionValue } from "framer-motion";
 import { motion } from "framer-motion";
 import Navbar from "../Components/Navbar";
-import { FiArrowRightCircle } from "react-icons/fi";
-
+import AboutHeroIntro from "../Components/AboutIntro";
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 
 const AboutPage = () => {
@@ -26,7 +24,7 @@ const AboutPage = () => {
         }}
         className=" flex flex-col bg-green-700  text-white w-full  items-center min-h-screen "
       >
-        <AboutHeroSection />
+        <AboutHeroIntro />
       </motion.main>
 
       <StarryBackgroundNoHover />
