@@ -130,7 +130,9 @@ const Navbar = () => {
       animate={hidden ? "hidden" : "visible"}
       style={{ boxShadow, zIndex: 20 }}
       transition={{ duration: 0.35, ease: "easeInOut" }}
-      className={`w-4/5 sm:w-full bg-transparent text-white p-1 fixed 
+      className={`w-4/5 sm:w-full ${
+        isScrolled ? "bg-secondaryDark" : "bg-transparent"
+      } text-white p-1 fixed 
        top-0 font-normal flex items-center justify-between rounded-bl-lg rounded-br-lg  `}
     >
       <button className="hidden sm:flex" onClick={handleClick}>

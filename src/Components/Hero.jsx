@@ -60,9 +60,9 @@ const HeroSection = () => {
     <motion.section
       style={{
         backgroundImage,
-        zIndex: 1,
+        zIndex: 10,
       }}
-      className=" flex justify-between text-white w-full items-center h-screen "
+      className=" flex justify-between relative text-white w-full items-center h-screen "
     >
       {/* <StarryBackground /> */}
       <StarryBackgoundHover mouse={mouse} rotationEnabled={rotationEnabled} />
@@ -133,11 +133,7 @@ const HeroSection = () => {
           </div>
         </motion.div>
       </OpacityReveal>
-      {/* <div className="absolute inset-0 z-0">
-        <Canvas>
-          <GiStarShuriken radius={50} count={2500} factor={4} fade speed={2} />
-        </Canvas>
-      </div> */}
+
     </motion.section>
   );
 };
