@@ -3,6 +3,8 @@ import Logo from "./Logo";
 import {
   AnimatePresence,
   motion,
+  useMotionTemplate,
+  useMotionValue,
   useMotionValueEvent,
   useScroll,
 } from "framer-motion";
@@ -38,12 +40,19 @@ const navLinks = [
   { title: "Articles", href: "articles" },
 ];
 
+const COLORS_TOP = ["#13FF9A", "#1E6aC6", "#CE34CF", "#DDc35C"];
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scroll, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
+  const color = useMotionValue(COLORS_TOP[0]);
+
+  const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #020617 50%, ${color})`;
+  const border = useMotionTemplate`1px solid ${color}`;
+  const boxShadow = useMotionTemplate`0px 4px 24px ${color}`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -112,8 +121,9 @@ const Navbar = () => {
         hidden: { y: "-100%" },
       }}
       animate={hidden ? "hidden" : "visible"}
+      style={{ boxShadow,zIndex:2 }}
       transition={{ duration: 0.35, ease: "easeInOut" }}
-      className={`w-4/5 sm:w-full bg-purple-500 text-white p-1 fixed 
+      className={`w-4/5 sm:w-full bg-transparent text-white p-1 fixed 
        top-0 font-normal flex items-center justify-between rounded-bl-lg rounded-br-lg  `}
     >
       <button className="hidden sm:flex" onClick={handleClick}>
@@ -164,10 +174,13 @@ const Navbar = () => {
         {open && (
           <motion.div
             variants={menuVars}
+            style={{
+              zIndex: 9,
+            }}
             initial="initial"
             exit="exit"
             animate="animate"
-            className="fixed flex flex-col origin-top  items-center left-0 top-0 w-full min-h-screen p-12 pt-minus bg-yellow-500 text-black"
+            className="fixed z-10 flex flex-col origin-top  items-center left-0 top-0 w-full min-h-screen p-12 pt-minus bg-yellow-500 text-black"
           >
             <div className="flex  items-center justify-between">
               <Logo />
@@ -183,7 +196,6 @@ const Navbar = () => {
               className="flex flex-col mt-10 items-center w-full justify-center font-mono gap-4"
             >
               {navLinks.map((link, index) => {
-
                 return (
                   <div className="overflow-hidden">
                     <MobileNavLink
