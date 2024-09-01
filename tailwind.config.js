@@ -5,11 +5,12 @@ module.exports = {
     extend: {
       padding: {
         huge: "5rem",
-        minus:"-7rem"
+        minus: "-7rem",
       },
       margin: {
         minus: "-7rem",
-        huge:"5rem"
+        huge: "5rem",
+        xsHuge: "7rem",
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
