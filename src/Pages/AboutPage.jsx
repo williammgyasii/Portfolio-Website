@@ -23,7 +23,7 @@ const AboutPage = () => {
         style={{
           backgroundImage,
         }}
-        className=" flex flex-col bg-green-700  text-white w-full  items-center min-h-screen "
+        className=" flex flex-col bg-green-700  text-white w-full  items-center min-h-screen xs:min-h-0 "
       >
         {/* //HERO SECTION */}
         <AboutHeroIntro />
