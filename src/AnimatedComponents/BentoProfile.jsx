@@ -3,31 +3,12 @@ import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { FiArrowRight, FiMail, FiMapPin } from "react-icons/fi";
 import { SiGithub, SiTiktok, SiTwitter, SiYoutube } from "react-icons/si";
+import { SlSocialTwitter } from "react-icons/sl";
+import myImage from "../Assets/SSS-2442.jpg";
+import { BsTwitterX } from "react-icons/bs";
+import { MdMovieCreation } from "react-icons/md";
 
-export const RevealBento = () => {
-  return (
-    <div className="min-h-screen bg-zinc-900 px-4 py-12 text-zinc-50">
-      <Logo />
-      <motion.div
-        initial="initial"
-        animate="animate"
-        transition={{
-          staggerChildren: 0.05,
-        }}
-        className="mx-auto grid max-w-4xl grid-flow-dense grid-cols-12 gap-4"
-      >
-        <HeaderBlock />
-        <SocialsBlock />
-        <AboutBlock />
-        <LocationBlock />
-        <EmailListBlock />
-      </motion.div>
-      <Footer />
-    </div>
-  );
-};
-
-const Block = ({ className, ...rest }) => {
+export const Block = ({ className, ...rest }) => {
   return (
     <motion.div
       variants={{
@@ -49,7 +30,7 @@ const Block = ({ className, ...rest }) => {
         damping: 50,
       }}
       className={twMerge(
-        "col-span-4 rounded-lg border border-zinc-700 bg-zinc-800 p-6",
+        "rounded-lg border-zinc-700 bg-zinc-800 p-4",
         className
       )}
       {...rest}
@@ -57,100 +38,97 @@ const Block = ({ className, ...rest }) => {
   );
 };
 
-const HeaderBlock = () => (
-  <Block className="col-span-12 row-span-2 md:col-span-6">
-    <img
-      src="https://api.dicebear.com/8.x/lorelei-neutral/svg?seed=John"
-      alt="avatar"
-      className="mb-4 size-14 rounded-full"
-    />
-    <h1 className="mb-12 text-4xl font-medium leading-tight">
-      Hi, I'm Tom.{" "}
+export const HeaderBlock = () => (
+  <Block className="col-span-6 row-span-2 md:col-span-6">
+    <h1 className="mb-3 text-xl font-light leading-tight">
+      Hi, I’m William, a passionate front-end developer with over 4 years of
+      experience
       <span className="text-zinc-400">
-        I build cool websites like this one.
+        {" "}
+        specializing in React for web development and React Native for mobile
+        applications.
       </span>
     </h1>
     <a
       href="#"
       className="flex items-center gap-1 text-red-300 hover:underline"
     >
-      Contact me <FiArrowRight />
+      View Projects <FiArrowRight />
     </a>
   </Block>
 );
 
-const SocialsBlock = () => (
+export const SocialsBlock = () => (
   <>
     <Block
       whileHover={{
         rotate: "2.5deg",
         scale: 1.1,
       }}
-      className="col-span-6 bg-red-500 md:col-span-3"
+      className="col-span-4  flex items-center justify-center row-span-2 bg-transparent cursor-pointer p-0 md:col-span-3"
     >
-      <a
-        href="#"
-        className="grid h-full place-content-center text-3xl text-white"
-      >
-        <SiYoutube />
-      </a>
+      <div className="relative w-[18rem]  h-[14rem] rounded-md overflow-hidden ">
+        <img
+          src={myImage}
+          alt="Sample"
+          style={{ objectPosition: "center 25%" }} // Adjust as needed
+          className="object-cover w-full h-full"
+        />
+      </div>
     </Block>
     <Block
       whileHover={{
         rotate: "-2.5deg",
         scale: 1.1,
       }}
-      className="col-span-6 bg-green-600 md:col-span-3"
+      className="col-span-2 row-span-1 flex items-center justify-center flex-col bg-green-600 md:col-span-3"
     >
-      <a
-        href="#"
-        className="grid h-full place-content-center text-3xl text-white"
-      >
-        <SiGithub />
-      </a>
+      <h1 className="text-5xl font-bold">4+</h1>
+      <span className="text-md">Experience </span>
     </Block>
     <Block
       whileHover={{
         rotate: "-2.5deg",
         scale: 1.1,
       }}
-      className="col-span-6 bg-zinc-50 md:col-span-3"
+      className="col-span-2 bg-zinc-50 md:col-span-3"
     >
       <a
         href="#"
         className="grid h-full place-content-center text-3xl text-black"
       >
-        <SiTiktok />
-      </a>
-    </Block>
-    <Block
-      whileHover={{
-        rotate: "2.5deg",
-        scale: 1.1,
-      }}
-      className="col-span-6 bg-blue-500 md:col-span-3"
-    >
-      <a
-        href="#"
-        className="grid h-full place-content-center text-3xl text-white"
-      >
-        <SiTwitter />
+        <MdMovieCreation />
       </a>
     </Block>
   </>
 );
 
-const AboutBlock = () => (
-  <Block className="col-span-12 text-3xl leading-snug">
-    <p>
-      My passion is building cool stuff.{" "}
-      <span className="text-zinc-400">
-        I build primarily with React, Tailwind CSS, and Framer Motion. I love
-        this stack so much that I even built a website about it. I've made over
-        a hundred videos on the subject across YouTube and TikTok.
-      </span>
-    </p>
-  </Block>
+export const AboutBlock = () => (
+  <>
+    <Block className="col-span-6 text-xl leading-snug">
+      <p>
+        My journey in the tech world
+        <span className="text-zinc-400 text-sm">
+          {" "}
+          has been driven by a deep love for creating{" "}
+          <span className="text-blue-400 text-2xl"> BEAUTIFUL </span>,
+          functional, and
+          <span className="text-yellow-400  text-2xl"> USER-FRIENDLY </span>
+          experiences.
+        </span>
+      </p>
+    </Block>
+    <Block className="col-span-6 text-xl leading-snug">
+      <p>
+        <span className="text-zinc-400 text-sm">
+          Whether I'm working on a website, mobile app, or other digital
+          product, I bring my commitment to design excellence and user-centered
+          thinking to every project I work on.  <span className="text-red-400 inline-block">I look forward to the opportunity
+          to bring my skills and passion to your next project.</span>
+        </span>
+      </p>
+    </Block>
+  </>
 );
 
 const LocationBlock = () => (
@@ -160,7 +138,7 @@ const LocationBlock = () => (
   </Block>
 );
 
-const EmailListBlock = () => (
+export const EmailListBlock = () => (
   <Block className="col-span-12 md:col-span-9">
     <p className="mb-3 text-lg">Join my mailing list</p>
     <form
@@ -182,7 +160,7 @@ const EmailListBlock = () => (
   </Block>
 );
 
-const Logo = () => {
+export const Logo = () => {
   // Temp logo from https://logoipsum.com/
   return (
     <svg
@@ -205,7 +183,7 @@ const Logo = () => {
   );
 };
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer className="mt-12">
       <p className="text-center text-zinc-400">

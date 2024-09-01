@@ -7,7 +7,13 @@ import {
 } from "framer-motion";
 import myImage from "../Assets/SSS-2442.jpg";
 import { FiArrowRightCircle } from "react-icons/fi";
-import { RevealBento } from "../AnimatedComponents/BentoProfile";
+import {
+  AboutBlock,
+  Footer,
+  HeaderBlock,
+  RevealBento,
+  SocialsBlock,
+} from "../AnimatedComponents/BentoProfile";
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 
@@ -30,7 +36,7 @@ const AboutHeroSection = () => {
   return (
     <motion.section
       style={{ zIndex: 10 }}
-      className="items-center flex flex-col justify-center mt-huge w-4/5"
+      className="items-center flex flex-col justify-center mt-huge w-4/5 md:w-full"
     >
       <motion.h1
         style={{
@@ -46,7 +52,22 @@ const AboutHeroSection = () => {
       >
         This is William Gyasi
       </motion.h1>
-      <RevealBento />
+
+      <div className=" px-4 py-2 mt-5 text-zinc-50">
+        <motion.div
+          initial="initial"
+          animate="animate"
+          transition={{
+            staggerChildren: 0.05,
+          }}
+          className="mx-auto grid grid-flow-dense grid-cols-12 md:grid-cols-6 gap-2"
+        >
+          <HeaderBlock border={borderBottom} boxShadow={boxShadow} />
+          <SocialsBlock />
+          <AboutBlock />
+        </motion.div>
+      </div>
+
       {/* <motion.div
         style={{ borderBottom, borderTop: borderBottom }}
         className=" grid w-full rounded-md py-3 grid-cols-8 gap-8 mt-10"
@@ -131,6 +152,10 @@ const AboutHeroSection = () => {
         </motion.div>
       </motion.div> */}
     </motion.section>
+    // {/* <SKILLS></SKILLS> */}
+
+    //   {/* EXPERIENCE */}
+    //   {/* EDUCATION */}
   );
 };
 

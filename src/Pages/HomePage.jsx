@@ -4,6 +4,7 @@ import Navbar from "../Components/Navbar";
 import Layout from "../Layouts/Layout";
 import OpacityReveal from "../AnimatedComponents/OpacityReveal";
 import StarryBackgroundNoHover from "../AnimatedComponents/StarryBackground";
+import { Footer } from "../AnimatedComponents/BentoProfile";
 
 const HomePage = () => {
   return (
@@ -12,6 +13,7 @@ const HomePage = () => {
         <Navbar />
         <Hero />
       </header>
+      {/* <Footer/> */}
     </>
   );
 };
