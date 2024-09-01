@@ -10,11 +10,13 @@ import { FiArrowRightCircle } from "react-icons/fi";
 import { Canvas } from "@react-three/fiber";
 import svgLogo from "../Assets/welcome.svg";
 import StarryBackground from "../AnimatedComponents/StarryBackground";
+import { useNavigate } from "react-router-dom";
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 
 const HeroSection = () => {
   const color = useMotionValue(COLORS_TOP[0]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     animate(color, COLORS_TOP, {
@@ -49,7 +51,7 @@ const HeroSection = () => {
         className="flex flex-col w-3/5 mx-auto  sm:w-full   items-start justify-center xs:px-5 xs:mt-10"
       >
         <h1 className="text-7xl font-sans font-bold mb-2 sm:mb-0 xs:text-5xl inline-block">
-          Hey, I'm William<span className="text-green-700">.</span>
+          Hey, I'm William<span className="text-yellow-400">.</span>
         </h1>
         <h1 className="text-2xl sm:text-2xl font-bold xs:text-lg">
           I'm a <span className="text-yellow-400">Front-End Developer.</span>
@@ -66,6 +68,7 @@ const HeroSection = () => {
         <img src={svgLogo} alt="SVG Image" className="animated-svg" />
         <div className="flex gap-2  w-full justify-center  mt-4">
           <motion.button
+            onClick={() => navigate("projects")}
             style={{ backgroundColor: "rgb(250 ,204 ,21)", border, boxShadow }}
             whileHover={{
               scale: 1.015,

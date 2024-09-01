@@ -11,6 +11,7 @@ import {
 import HomePage from "./Pages/HomePage";
 import RootLayout from "./Layouts/RootLayout";
 import AboutPage from "./Pages/AboutPage";
+import ProjectsPage from "./Pages/ProjectsPage";
 
 function App() {
   const router = createBrowserRouter(
@@ -18,6 +19,7 @@ function App() {
       <Route path="/" element={<RootLayout />}>
         <Route element={<HomePage />} index />
         <Route element={<AboutPage />} path="about" />
+        <Route element={<ProjectsPage />} path="projects" />
       </Route>
     )
   );
