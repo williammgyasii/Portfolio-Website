@@ -7,6 +7,7 @@ import {
 } from "framer-motion";
 import myImage from "../Assets/SSS-2442.jpg";
 import { FiArrowRightCircle } from "react-icons/fi";
+import { RevealBento } from "../AnimatedComponents/BentoProfile";
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 
@@ -45,7 +46,8 @@ const AboutHeroSection = () => {
       >
         This is William Gyasi
       </motion.h1>
-      <motion.div
+      <RevealBento />
+      {/* <motion.div
         style={{ borderBottom, borderTop: borderBottom }}
         className=" grid w-full rounded-md py-3 grid-cols-8 gap-8 mt-10"
       >
@@ -104,12 +106,30 @@ const AboutHeroSection = () => {
           />
         </motion.div>
 
-        <motion.div className="col-span-2 relative flex flex-col items-end justify-center ">
-          <span>
-            
-          </span>
+        <motion.div className="col-span-2 relative flex flex-col items-end justify-between">
+          <motion.div className="flex flex-col items-end justify-center">
+            <span className="inline-block text-6xl font-bold">6+</span>
+            <h2 className="text-xl capitalize font-medium text-dark/75">
+              Satisfied Customers
+            </h2>
+          </motion.div>
+
+          <motion.div className="flex flex-col items-end justify-center">
+            <span className="inline-block text-6xl font-bold">6+</span>
+            <h2 className="text-xl capitalize font-medium text-dark/75">
+              Satisfied Customers
+            </h2>
+          </motion.div>
+
+          <motion.div className="flex flex-col items-end justify-center">
+            <span className="inline-block text-6xl font-bold">6+</span>
+            <h2 className="text-xl capitalize font-medium text-dark/75">
+              Satisfied Customers
+            </h2>
+          </motion.div>
+
         </motion.div>
-      </motion.div>
+      </motion.div> */}
     </motion.section>
   );
 };
