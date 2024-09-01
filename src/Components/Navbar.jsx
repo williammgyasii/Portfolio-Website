@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Logo from "./Logo";
 import {
+  animate,
   AnimatePresence,
   motion,
   useMotionTemplate,
@@ -48,13 +49,19 @@ const Navbar = () => {
   const [hidden, setHidden] = useState(false);
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
-  const color = useMotionValue(COLORS_TOP[0]);
+  const color = useMotionValue(COLORS_TOP[2]);
 
-  const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #020617 50%, ${color})`;
+  const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #020631 50%, ${color})`;
   const border = useMotionTemplate`1px solid ${color}`;
   const boxShadow = useMotionTemplate`0px 4px 24px ${color}`;
 
   useEffect(() => {
+    animate(color, COLORS_TOP, {
+      ease: "easeInOut",
+      duration: 10,
+      repeat: Infinity,
+      repeatType: "mirror",
+    });
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
     };
@@ -121,7 +128,7 @@ const Navbar = () => {
         hidden: { y: "-100%" },
       }}
       animate={hidden ? "hidden" : "visible"}
-      style={{ boxShadow,zIndex:2 }}
+      style={{ boxShadow, zIndex: 2 }}
       transition={{ duration: 0.35, ease: "easeInOut" }}
       className={`w-4/5 sm:w-full bg-transparent text-white p-1 fixed 
        top-0 font-normal flex items-center justify-between rounded-bl-lg rounded-br-lg  `}
@@ -176,11 +183,12 @@ const Navbar = () => {
             variants={menuVars}
             style={{
               zIndex: 9,
+              backgroundImage,
             }}
             initial="initial"
             exit="exit"
             animate="animate"
-            className="fixed z-10 flex flex-col origin-top  items-center left-0 top-0 w-full min-h-screen p-12 pt-minus bg-yellow-500 text-black"
+            className="fixed z-10 flex flex-col origin-top  items-center left-0 top-0 w-full min-h-screen p-12 pt-minus  text-white"
           >
             <div className="flex  items-center justify-between">
               <Logo />
@@ -269,7 +277,7 @@ const MobileNavLink = ({ title, href }) => {
   return (
     <motion.div
       variants={mobileLinkVars}
-      className="text-5xl uppercase text-black"
+      className="text-5xl uppercase text-white"
     >
       <motion.a whileHover={{ scale: 0.9 }} href={href}>
         {title}

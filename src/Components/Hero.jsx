@@ -64,7 +64,7 @@ const HeroSection = () => {
           </span> */}
         </p>
         <img src={svgLogo} alt="SVG Image" className="animated-svg" />
-        <div className="flex gap-2  mt-4">
+        <div className="flex gap-2  w-full justify-center  mt-4">
           <motion.button
             style={{ backgroundColor: "rgb(250 ,204 ,21)", border, boxShadow }}
             whileHover={{
@@ -75,7 +75,7 @@ const HeroSection = () => {
             }}
             className="relative cursor-pointer flex w-fit items-center gap-1.5 w-fit rounded-md bg-green-950/10 px-5 py-3 xs:px-2 xs:text-xs text-yellow-50 transition-colors hover:bg-gray-950/50"
           >
-            Lets Connect
+            Projects
             <FiArrowRightCircle className="transition-transform group-hover:-rotate-45 group-active:-rotate-12" />
           </motion.button>
           <motion.button
