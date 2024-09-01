@@ -14,11 +14,11 @@ import {
   RevealBento,
   SocialsBlock,
 } from "../AnimatedComponents/BentoProfile";
-import SkillsSection from "./SkillsSection";
+import skillStack from "./SkillsStack";
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 
-const AboutHeroSection = () => {
+const SkillsSection = () => {
   const color = useMotionValue(COLORS_TOP[0]);
   const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #020617 50%, ${color})`;
   const borderBottom = useMotionTemplate`1px solid ${color}`;
@@ -37,7 +37,7 @@ const AboutHeroSection = () => {
   return (
     <motion.section
       style={{ zIndex: 10 }}
-      className="items-center flex flex-col justify-center mt-huge w-4/5 md:w-full"
+      className="items-center flex flex-col justify-center mt-10 w-4/5 md:w-full"
     >
       <motion.h1
         style={{
@@ -49,27 +49,24 @@ const AboutHeroSection = () => {
         whileTap={{
           scale: 0.985,
         }}
-        className="inline-block text-4xl items-center cursor-pointer xs:text-lg rounded-md bg-gray-950/10 px-4 py-3 text-gray-50 transition-colors hover:bg-gray-950/50"
+        className="inline-block text-4xl items-center cursor-pointer 
+        xs:text-lg rounded-md bg-gray-950/10 px-4 mb-4 py-3 text-gray-50 
+        transition-colors hover:bg-gray-950/50"
       >
-        This is William Gyasi
+        My Expertise
       </motion.h1>
 
-      <div className=" px-4 py-2 mt-5 text-zinc-50">
-        <motion.div
-          initial="initial"
-          animate="animate"
-          transition={{
-            staggerChildren: 0.05,
-          }}
-          className="mx-auto grid grid-flow-dense grid-cols-12 md:grid-cols-6 gap-2"
-        >
-          <HeaderBlock border={borderBottom} boxShadow={boxShadow} />
-          <SocialsBlock />
-          <AboutBlock />
-        </motion.div>
-      </div>
-
-      <SkillsSection />
+      <motion.div className="flex flex-wrap gap-4">
+        {skillStack.map((skill, index) => (
+          <div
+            key={index}
+            className="flex items-center gap-2 p-2 border rounded-md"
+          >
+            {skill.icon}
+            <span>{skill.name}</span>
+          </div>
+        ))}
+      </motion.div>
 
       {/* <motion.div
         style={{ borderBottom, borderTop: borderBottom }}
@@ -162,4 +159,4 @@ const AboutHeroSection = () => {
   );
 };
 
-export default AboutHeroSection;
+export default SkillsSection;
