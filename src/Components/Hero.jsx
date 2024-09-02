@@ -7,16 +7,14 @@ import {
   useMotionValue,
 } from "framer-motion";
 import { FiArrowRightCircle } from "react-icons/fi";
-import { Canvas } from "@react-three/fiber";
 import svgLogo from "../Assets/welcome.svg";
-// import StarryBackground from "../AnimatedComponents/StarryBackground";
 import { useNavigate } from "react-router-dom";
 import StarryBackgoundHover from "../AnimatedComponents/StarryBackgoundHover";
 import OpacityReveal from "../AnimatedComponents/OpacityReveal";
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 
-const HeroSection = () => {
+const HomePageHeroSection = () => {
   const color = useMotionValue(COLORS_TOP[0]);
   const navigate = useNavigate();
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
@@ -133,9 +131,8 @@ const HeroSection = () => {
           </div>
         </motion.div>
       </OpacityReveal>
-
     </motion.section>
   );
 };
 
-export default HeroSection;
+export default HomePageHeroSection;

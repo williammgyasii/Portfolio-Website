@@ -6,6 +6,7 @@ import Navbar from "../Components/Navbar";
 import ProjectHeroSection from "../Components/ProjectIntro";
 import FeatureProject from "../AnimatedComponents/FeatureProject";
 import AnimatedText from "../AnimatedComponents/AnimatedText";
+import Header from "../Components/Header";
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 
@@ -13,8 +14,8 @@ const ProjectsPage = () => {
   const color = useMotionValue(COLORS_TOP[3]);
   const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #020617 50%, ${color})`;
   return (
-    <section className="bg-red-500 w-full flex flex-col items-center justify-center">
-      <Navbar />
+    <>
+      <Header />
       <motion.main
         style={{
           backgroundImage,
@@ -24,10 +25,11 @@ const ProjectsPage = () => {
         <AnimatedText>
           <ProjectHeroSection />
         </AnimatedText>
+
         <FeatureProject />
       </motion.main>
       <StarryBackgroundNoHover />
-    </section>
+    </>
   );
 };
 
