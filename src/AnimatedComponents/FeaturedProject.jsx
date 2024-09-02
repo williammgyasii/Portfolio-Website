@@ -1,7 +1,7 @@
 import React from "react";
 
-const FeatureProject = () => {
+const FeaturedProject = () => {
   return <div style={{ zIndex: 10 }}>FeatureProject</div>;
 };
 
-export default FeatureProject;
+export default FeaturedProject;

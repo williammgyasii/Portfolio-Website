@@ -1,5 +1,6 @@
 import React from "react";
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
+import FeaturedProject from "../AnimatedComponents/FeaturedProject";
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 
@@ -28,6 +29,7 @@ const ProjectHeroSection = () => {
       >
         Some of my best WORKS!
       </motion.h1>
+      <FeaturedProject />
     </motion.section>
   );
 };

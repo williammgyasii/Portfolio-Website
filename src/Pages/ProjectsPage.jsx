@@ -4,7 +4,7 @@ import { useMotionTemplate, useMotionValue } from "framer-motion";
 import { motion } from "framer-motion";
 import Navbar from "../Components/Navbar";
 import ProjectHeroSection from "../Components/ProjectIntro";
-import FeatureProject from "../AnimatedComponents/FeatureProject";
+import FeatureProject from "../AnimatedComponents/FeaturedProject";
 import AnimatedText from "../AnimatedComponents/AnimatedText";
 import Header from "../Components/Header";
 
@@ -26,7 +26,7 @@ const ProjectsPage = () => {
           <ProjectHeroSection />
         </AnimatedText>
 
-        <FeatureProject />
+        
       </motion.main>
       <StarryBackgroundNoHover />
     </>
