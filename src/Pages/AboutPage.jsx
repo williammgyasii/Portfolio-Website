@@ -27,6 +27,9 @@ const AboutPage = () => {
       >
         <AboutHeroSection />
         <AboutSkillsSection />
+        {/* ABOUT EXPERIENCE <SECTION> */}
+          {/* ABOUT EDUCATION SECTION
+        </SECTION> */}
       </motion.main>
 
       <StarryBackgroundNoHover />

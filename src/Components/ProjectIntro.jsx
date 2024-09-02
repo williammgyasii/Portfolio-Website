@@ -29,7 +29,9 @@ const ProjectHeroSection = () => {
       >
         Some of my best WORKS!
       </motion.h1>
+
       <FeaturedProject />
+      
     </motion.section>
   );
 };
