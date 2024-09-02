@@ -1,47 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
+import ProjectBox from "./ProjectBox";
+import { animate, useMotionTemplate, useMotionValue } from "framer-motion";
+import { motion } from "framer-motion";
 
-const FeaturedProject = ({
-  imageSrc,
-  title,
-  description,
-  technologies,
-  projectLink,
-}) => {
+const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
+
+const FeaturedProject = ({}) => {
+  const color = useMotionValue(COLORS_TOP[0]);
+
+  const borderBottom = useMotionTemplate`1px solid ${color}`;
+  const boxShadow = useMotionTemplate` 0px 4px 24px ${color}`;
+
+  useEffect(() => {
+    animate(color, COLORS_TOP, {
+      ease: "easeInOut",
+      duration: 10,
+      repeat: Infinity,
+      repeatType: "mirror",
+    });
+  }, []);
   return (
-    <div
-      style={{ zIndex: 5 }}
-      className="flex flex-col md:flex-row items-center bg-gray-100 p-6 rounded-lg shadow-lg mb-6"
+    <motion.div
+      style={{ borderBottom, borderTop: borderBottom }}
+      className=" w-full flex rounded-md  justify-center"
     >
-      <div className="md:w-1/3 mb-4 md:mb-0 md:pr-6">
-        <img
-          src={imageSrc}
-          alt={`${title} Image`}
-          className="w-full rounded-lg"
-        />
-      </div>
-      <div className="md:w-2/3 flex flex-col">
-        <h2 className="text-2xl font-bold text-gray-800 mb-2">{title}</h2>
-        <p className="text-lg text-gray-600 mb-4">{description}</p>
-        <div className="mb-4">
-          {technologies.map((tech, index) => (
-            <span
-              key={index}
-              className="inline-block bg-blue-600 text-white text-sm px-3 py-1 rounded-full mr-2 mb-2"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-        <a
-          href={projectLink}
-          className="self-start bg-green-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-500 transition duration-300"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View Project
-        </a>
-      </div>
-    </div>
+      <ProjectBox
+        imageSrc="path/to/your/image.jpg"
+        title="Awesome Project"
+        description="This project is a web application that solves a specific problem."
+        technologies={["HTML", "CSS", "JavaScript", "React"]}
+        projectLink="https://yourprojectwebsite.com"
+      />
+    </motion.div>
   );
 };
 

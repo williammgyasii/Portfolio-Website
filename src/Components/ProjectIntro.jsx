@@ -13,7 +13,7 @@ const ProjectHeroSection = () => {
   return (
     <motion.section
       style={{ zIndex: 10 }}
-      className="items-center justify-center mt-xsHuge"
+      className="items-center flex flex-col justify-center xs:mt-huge my-xsHuge w-4/5 md:w-full"
     >
       <motion.h1
         style={{
@@ -25,13 +25,11 @@ const ProjectHeroSection = () => {
         whileTap={{
           scale: 0.985,
         }}
-        className="inline-block text-4xl items-center cursor-pointer xs:text-lg rounded-md bg-gray-950/10 px-4 py-3 text-gray-50 transition-colors hover:bg-gray-950/50"
+        className="inline-block text-4xl mb-5 items-center cursor-pointer xs:text-lg rounded-md bg-gray-950/10 px-4 py-3 text-gray-50 transition-colors hover:bg-gray-950/50"
       >
         Some of my best WORKS!
       </motion.h1>
-
       <FeaturedProject />
-      
     </motion.section>
   );
 };
