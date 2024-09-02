@@ -16,7 +16,7 @@ const spinningBoxVariants = {
 const SpinningBox = ({ text }) => {
   return (
     <motion.div
-      className="absolute inset-0 flex items-center justify-center"
+      className="absolute inset-0 top-0 left-0 flex items-center justify-center"
       variants={spinningBoxVariants}
       initial="spin"
       animate="spin"

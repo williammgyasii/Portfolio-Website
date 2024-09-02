@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-function AnimatedText({ className, children }) {
+function AnimatedVerticalView({ className, children }) {
   const quote = {
     initial: {
       opacity: 0,
@@ -40,4 +40,4 @@ function AnimatedText({ className, children }) {
   );
 }
 
-export default AnimatedText;
+export default AnimatedVerticalView;
