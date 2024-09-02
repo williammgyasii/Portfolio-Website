@@ -4,6 +4,8 @@ import { useMotionTemplate, useMotionValue } from "framer-motion";
 import { motion } from "framer-motion";
 import Navbar from "../Components/Navbar";
 import ProjectHeroSection from "../Components/ProjectIntro";
+import FeatureProject from "../AnimatedComponents/FeatureProject";
+import AnimatedText from "../AnimatedComponents/AnimatedText";
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 
@@ -19,7 +21,10 @@ const ProjectsPage = () => {
         }}
         className=" flex flex-col bg-green-700  text-white w-full  items-center min-h-screen "
       >
-        <ProjectHeroSection />
+        <AnimatedText>
+          <ProjectHeroSection />
+        </AnimatedText>
+        <FeatureProject />
       </motion.main>
       <StarryBackgroundNoHover />
     </section>
