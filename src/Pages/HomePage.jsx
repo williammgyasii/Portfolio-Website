@@ -1,19 +1,20 @@
 import React from "react";
-import Hero from "../Components/Hero";
+import Hero from "../Components/HomePageHeroSection";
 import Navbar from "../Components/Navbar";
 import Layout from "../Layouts/Layout";
 import OpacityReveal from "../AnimatedComponents/OpacityReveal";
 import StarryBackgroundNoHover from "../AnimatedComponents/StarryBackground";
 import { Footer } from "../AnimatedComponents/BentoProfile";
+import Header from "../Components/Header";
+import HomePageHeroSection from "../Components/HomePageHeroSection";
 
 const HomePage = () => {
   return (
     <>
-      <header className="w-full relative flex flex-col items-center justify-center min-h-screen">
-        <Navbar />
-        <Hero />
-      </header>
-      {/* <Footer/> */}
+      <Header />
+      <main>
+        <HomePageHeroSection />
+      </main>
     </>
   );
 };

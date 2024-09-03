@@ -2,10 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { FiArrowRight, FiMail, FiMapPin } from "react-icons/fi";
-import { SiGithub, SiTiktok, SiTwitter, SiYoutube } from "react-icons/si";
-import { SlSocialTwitter } from "react-icons/sl";
 import myImage from "../Assets/SSS-2442.jpg";
-import { BsTwitterX } from "react-icons/bs";
 import { MdMovieCreation } from "react-icons/md";
 
 export const Block = ({ className, ...rest }) => {
@@ -50,7 +47,7 @@ export const HeaderBlock = () => (
       </span>
     </h1>
     <a
-      href="#"
+      href="/projects"
       className="flex items-center gap-1 text-red-300 hover:underline"
     >
       View Projects <FiArrowRight />
@@ -107,7 +104,7 @@ export const AboutBlock = () => (
   <>
     <Block className="col-span-6 text-xl leading-snug">
       <p>
-        My journey in the tech world
+        Alter Egos
         <span className="text-zinc-400 text-sm">
           {" "}
           has been driven by a deep love for creating{" "}
@@ -123,8 +120,11 @@ export const AboutBlock = () => (
         <span className="text-zinc-400 text-sm">
           Whether I'm working on a website, mobile app, or other digital
           product, I bring my commitment to design excellence and user-centered
-          thinking to every project I work on.  <span className="text-red-400 inline-block">I look forward to the opportunity
-          to bring my skills and passion to your next project.</span>
+          thinking to every project I work on.{" "}
+          <span className="text-red-400 inline-block">
+            I look forward to the opportunity to bring my skills and passion to
+            your next project.
+          </span>
         </span>
       </p>
     </Block>
@@ -183,15 +183,15 @@ export const Logo = () => {
   );
 };
 
-export const Footer = () => {
-  return (
-    <footer className="mt-12">
-      <p className="text-center text-zinc-400">
-        Made with ❤️ by{" "}
-        <a href="#" className="text-red-300 hover:underline">
-          @tomisloading
-        </a>
-      </p>
-    </footer>
-  );
-};
+// export const Footer = () => {
+//   return (
+//     <footer className="mt-12">
+//       <p className="text-center text-zinc-400">
+//         Made with ❤️ by{" "}
+//         <a href="#" className="text-red-300 hover:underline">
+//           @tomisloading
+//         </a>
+//       </p>
+//     </footer>
+//   );
+// };

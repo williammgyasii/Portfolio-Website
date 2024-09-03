@@ -5,25 +5,19 @@ import {
   useMotionTemplate,
   useMotionValue,
 } from "framer-motion";
-import myImage from "../Assets/SSS-2442.jpg";
-import { FiArrowRightCircle } from "react-icons/fi";
 import {
   AboutBlock,
-  Footer,
   HeaderBlock,
-  RevealBento,
   SocialsBlock,
 } from "../AnimatedComponents/BentoProfile";
-import SkillsSection from "./SkillsSection";
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 
 const AboutHeroSection = () => {
   const color = useMotionValue(COLORS_TOP[0]);
-  const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #020617 50%, ${color})`;
+
   const borderBottom = useMotionTemplate`1px solid ${color}`;
   const boxShadow = useMotionTemplate` 0px 4px 24px ${color}`;
-  const contentBorder = useMotionTemplate`1px solid ${color}`;
 
   useEffect(() => {
     animate(color, COLORS_TOP, {
@@ -37,7 +31,7 @@ const AboutHeroSection = () => {
   return (
     <motion.section
       style={{ zIndex: 10 }}
-      className="items-center flex flex-col justify-center h-screen mt-10 w-4/5 md:w-full"
+      className="items-center flex flex-col justify-center xs:mt-huge my-xsHuge w-4/5 md:w-full"
     >
       <motion.h1
         style={{
@@ -69,7 +63,6 @@ const AboutHeroSection = () => {
         </motion.div>
       </div>
 
-      
       {/* <motion.div
         style={{ borderBottom, borderTop: borderBottom }}
         className=" grid w-full rounded-md py-3 grid-cols-8 gap-8 mt-10"
