@@ -94,16 +94,17 @@ const ProjectBox = ({
 
   return (
     <motion.div
-      className={`flex ${isFeatured ? "flex-row" : "flex-col"}
+      className={`flex sm:flex-col sm:items-center sm:justify-center ${
+        isFeatured ? "flex-row " : "flex-col"
+      }
     ${isFeatured ? "items-normal" : "items-center"}
     ${isFeatured ? "" : "w-full"}
     ${isFeatured ? "h-[23rem]" : "h-[25rem]"}
-        ${className}`}
+        ${className} sm:h-[30rem]`}
       style={style}
-      // className=" w-full flex rounded-md  justify-center  p-5"
     >
       <div
-        className={`${
+        className={`sm:w-full ${
           isFeatured ? "w-1/3" : "w-full"
         }  relative overflow-hidden rounded-lg`}
       >
@@ -120,29 +121,31 @@ const ProjectBox = ({
           isFeatured ? "w-2/3" : "w-full"
         }  text-white  items-center ${
           isFeatured ? "pl-6 " : "pl-0"
-        } flex flex-col `}
+        } flex flex-col sm:w-full  sm:pl-0`}
       >
-        {isFeatured && (
-          <span className="text-white font-medium text-sm border border-pink-300 p-2 rounded-lg">
-            Featured Project
-          </span>
-        )}
-        <a
-          href={projectLink}
-          target="_blank"
-          className="hover:underline underline-offset-2"
-        >
-          <h2
-            className={`${
-              isFeatured ? "text-4xl" : "text-2xl"
-            } font-bold text-white  my-2 text-left font-bold`}
+        <div className={`sm:flex sm:justify-between sm:items-center sm:w-full`}>
+          {isFeatured && (
+            <span className="text-white font-medium text-sm border border-pink-300 p-2 rounded-lg">
+              Featured Project
+            </span>
+          )}
+          <a
+            href={projectLink}
+            target="_blank"
+            className="hover:underline underline-offset-2"
           >
-            {title.toUpperCase()}
-          </h2>
-        </a>
+            <h2
+              className={`${
+                isFeatured ? "text-4xl" : "text-2xl"
+              } font-bold text-white  my-2 text-left font-bold sm:text-lg`}
+            >
+              {title.toUpperCase()}
+            </h2>
+          </a>
+        </div>
 
-        <Block className="mb-3 w-full">
-          <p className="text-sm  text-center">{description}</p>
+        <Block className="mb-3 w-full ">
+          <p className="text-sm  text-center sm:text-xs">{description}</p>
         </Block>
         <div className="mb-1 flex items-center flex-wrap justify-center">
           {technologies.map((tech, index) => (

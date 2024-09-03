@@ -10,7 +10,7 @@ function Stars() {
   const starPositions = useMemo(() => {
     const positions = new Float32Array(5000 * 3); // 5000 stars
 
-    for (let i = 0; i < 5000; i++) {
+    for (let i = 0; i < 9000; i++) {
       positions[i * 3] = THREE.MathUtils.randFloatSpread(3000); // x
       positions[i * 3 + 1] = THREE.MathUtils.randFloatSpread(3000); // y
       positions[i * 3 + 2] = THREE.MathUtils.randFloatSpread(3000); // z
@@ -32,10 +32,10 @@ function Stars() {
       <pointsMaterial
         attach="material"
         color={0xffffff}
-        size={2.5} // Increased size of stars
+        size={2.0} // Increased size of stars
         sizeAttenuation
         transparent
-        opacity={0.8} // Slightly transparent for a glowing effect
+        opacity={0.9} // Slightly transparent for a glowing effect
       />
     </points>
   );
@@ -44,7 +44,7 @@ function Stars() {
 function StarryBackgroundNoHover() {
   return (
     <Canvas style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',zIndex:1 }}>
-      <ambientLight intensity={0.5} />
+      <ambientLight intensity={0.9} />
       <Stars />
       <OrbitControls />
     </Canvas>
