@@ -80,50 +80,47 @@ export const SecondColumn = () => (
         rotate: "2.5deg",
         scale: 1.1,
       }}
-      className="col-span-4  flex items-center justify-center row-span-4
+      className="col-span-4 rounded-lg h-[25rem] overflow-hidden flex items-center justify-center
        bg-transparent cursor-pointer p-0 md:col-span-3"
     >
-      <div className="relative w-[auto]  h-[auto] rounded-md overflow-hidden ">
-        <img
-          src={myImage}
-          alt="Sample"
-          style={{ objectPosition: "center 25%" }} // Adjust as needed
-          className="object-cover w-full h-full"
-        />
-      </div>
-    </Block>
-
-    <Block
-      whileHover={{
-        rotate: "-2.5deg",
-        scale: 1.1,
-      }}
-      className="col-span-2 flex items-center justify-center flex-col bg-green-600 md:col-span-3"
-    >
-      <h1 className="text-5xl font-bold">4+</h1>
-      <span className="text-md">Experience </span>
-    </Block>
-    <Block
-      whileHover={{
-        rotate: "-2.5deg",
-        scale: 1.1,
-      }}
-      className="col-span-2 bg-zinc-50 md:col-span-3"
-    >
-      <a
-        href="#"
-        className="grid h-full place-content-center text-3xl text-black"
-      >
-        <MdMovieCreation />
-      </a>
+      <img
+        src={myImage}
+        alt="Sample"
+        style={{ objectPosition: "center 25%" }} // Adjust as needed
+        className="object-cover w-full h-full"
+      />
     </Block>
   </>
 );
 
 export const ThirdColumn = () => (
   <>
-    <div className="col-span-2">
-      
+    <div className="col-span-2 flex items-center justify-center flex-col">
+      <Block
+        whileHover={{
+          rotate: "-2.5deg",
+          scale: 1.1,
+        }}
+        className="col-span-2  bg-green-600 md:col-span-3"
+      >
+        <h1 className="text-5xl font-bold">4+</h1>
+        <span className="text-md">Experience </span>
+      </Block>
+
+      <Block
+        whileHover={{
+          rotate: "-2.5deg",
+          scale: 1.1,
+        }}
+        className="col-span-2 bg-zinc-50 md:col-span-3"
+      >
+        <a
+          href="#"
+          className="grid h-full place-content-center text-3xl text-black"
+        >
+          <MdMovieCreation />
+        </a>
+      </Block>
     </div>
   </>
 );

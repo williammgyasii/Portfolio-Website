@@ -11,6 +11,7 @@ import {
   ImageBlock,
   SecondBlock,
   SecondColumn,
+  ThirdColumn,
 } from "../AnimatedComponents/BentoProfile";
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
@@ -58,11 +59,11 @@ const AboutHeroSection = () => {
           transition={{
             staggerChildren: 0.05,
           }}
-          className="mx-auto grid grid-flow-dense grid-cols-12 md:grid-cols-6 gap-1"
+          className="mx-auto grid grid-flow-dense grid-cols-12 md:grid-cols-6 gap-2"
         >
           <FirstColumn border={borderBottom} boxShadow={boxShadow} />
           <SecondColumn />
-          
+          <ThirdColumn />
         </motion.div>
       </div>
     </motion.section>
