@@ -36,35 +36,43 @@ export const Block = ({ className, ...rest }) => {
 };
 
 export const HeaderBlock = () => (
-  <Block className="col-span-6 row-span-2 md:col-span-6">
-    <h1 className="mb-3 text-xl font-light leading-tight">
-      Hi, I’m William, a passionate front-end developer with over 4 years of
-      experience
-      <span className="text-zinc-400">
-        {" "}
-        specializing in React for web development and React Native for mobile
-        applications.
-      </span>
-    </h1>
-    <a
-      href="/projects"
-      className="flex items-center gap-1 text-red-300 hover:underline"
-    >
-      View Projects <FiArrowRight />
-    </a>
-  </Block>
+  <>
+    <div className="col-span-6 row-span-1 md:col-span-6 gap-2">
+      <Block className={"col-span-6"}>
+        <h1 className="mb-3 text-xl font-light leading-tight md:text-sm">
+          Hi, I’m William, a passionate front-end developer with over 4 years of
+          experience
+          <span className="text-zinc-400">
+            {" "}
+            specializing in React for web development and React Native for
+            mobile applications.
+          </span>
+        </h1>
+        <a
+          href="/projects"
+          className="flex items-center gap-1 text-red-300 hover:underline"
+        >
+          View Projects <FiArrowRight />
+        </a>
+      </Block>
+      <Block className={"col-span-6"}>
+        <AboutBlock />
+      </Block>
+    </div>
+  </>
 );
 
-export const SocialsBlock = () => (
+export const ImageBlock = () => (
   <>
     <Block
       whileHover={{
         rotate: "2.5deg",
         scale: 1.1,
       }}
-      className="col-span-4  flex items-center justify-center row-span-2 bg-transparent cursor-pointer p-0 md:col-span-3"
+      className="col-span-4  flex items-center justify-center row-span-4
+       bg-transparent cursor-pointer p-0 md:col-span-3"
     >
-      <div className="relative w-[18rem]  h-[14rem] rounded-md overflow-hidden ">
+      <div className="relative w-[auto]  h-[auto] rounded-md overflow-hidden ">
         <img
           src={myImage}
           alt="Sample"
@@ -73,12 +81,13 @@ export const SocialsBlock = () => (
         />
       </div>
     </Block>
+
     <Block
       whileHover={{
         rotate: "-2.5deg",
         scale: 1.1,
       }}
-      className="col-span-2 row-span-1 flex items-center justify-center flex-col bg-green-600 md:col-span-3"
+      className="col-span-2 flex items-center justify-center flex-col bg-green-600 md:col-span-3"
     >
       <h1 className="text-5xl font-bold">4+</h1>
       <span className="text-md">Experience </span>
@@ -102,7 +111,7 @@ export const SocialsBlock = () => (
 
 export const AboutBlock = () => (
   <>
-    <Block className="col-span-6 text-xl leading-snug">
+    {/* <Block className="col-span-6 text-xl leading-snug">
       <p>
         Alter Egos
         <span className="text-zinc-400 text-sm">
@@ -114,24 +123,22 @@ export const AboutBlock = () => (
           experiences.
         </span>
       </p>
-    </Block>
+    </Block> */}
     <Block className="col-span-6 text-xl leading-snug">
-      <p>
-        <span className="text-zinc-400 text-sm">
+      <h1 className="mb-3 text-xl font-light leading-tight text-center md:text-sm">
+        I look forward to the opportunity to bring my skills and passion to your
+        next project.
+        <span className="text-zinc-400">
           Whether I'm working on a website, mobile app, or other digital
           product, I bring my commitment to design excellence and user-centered
           thinking to every project I work on.{" "}
-          <span className="text-red-400 inline-block">
-            I look forward to the opportunity to bring my skills and passion to
-            your next project.
-          </span>
         </span>
-      </p>
+      </h1>
     </Block>
   </>
 );
 
-const LocationBlock = () => (
+export const LocationBlock = () => (
   <Block className="col-span-12 flex flex-col items-center gap-4 md:col-span-3">
     <FiMapPin className="text-3xl" />
     <p className="text-center text-lg text-zinc-400">Cyberspace</p>
