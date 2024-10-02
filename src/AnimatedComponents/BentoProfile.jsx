@@ -4,6 +4,7 @@ import { twMerge } from "tailwind-merge";
 import { FiArrowRight, FiMail, FiMapPin } from "react-icons/fi";
 import myImage from "../Assets/SSS-2442.jpg";
 import { MdMovieCreation } from "react-icons/md";
+import { IoLogoGithub } from "react-icons/io5";
 
 export const Block = ({ className, ...rest }) => {
   return (
@@ -37,7 +38,7 @@ export const Block = ({ className, ...rest }) => {
 
 export const FirstColumn = () => (
   <>
-    <div className="col-span-6 row-span-1 md:col-span-6 gap-2">
+    <div className="col-span-6 grid row-span-1 md:col-span-6 gap-2">
       <Block className={"col-span-6"}>
         <h1 className="mb-3 text-xl font-light leading-tight md:text-sm">
           Hi, I’m William, a passionate front-end developer with over 4 years of
@@ -80,7 +81,7 @@ export const SecondColumn = () => (
         rotate: "2.5deg",
         scale: 1.1,
       }}
-      className="col-span-4 rounded-lg h-[25rem] overflow-hidden flex items-center justify-center
+      className="col-span-4 grid rounded-lg h-[25rem] overflow-hidden flex items-center justify-center
        bg-transparent cursor-pointer p-0 md:col-span-3"
     >
       <img
@@ -95,15 +96,15 @@ export const SecondColumn = () => (
 
 export const ThirdColumn = () => (
   <>
-    <div className="col-span-2 flex items-center justify-center flex-col">
+    <div className="col-span-2 grid bg-red-700">
       <Block
         whileHover={{
           rotate: "-2.5deg",
           scale: 1.1,
         }}
-        className="col-span-2  bg-green-600 md:col-span-3"
+        className="col-span-2 flex flex-col mb-2 justify-center items-center bg-green-600 md:col-span-3"
       >
-        <h1 className="text-5xl font-bold">4+</h1>
+        <h1 className="text-6xl font-bold">4+</h1>
         <span className="text-md">Experience </span>
       </Block>
 
@@ -112,13 +113,13 @@ export const ThirdColumn = () => (
           rotate: "-2.5deg",
           scale: 1.1,
         }}
-        className="col-span-2 bg-zinc-50 md:col-span-3"
+        className="col-span-2 row-span-4 bg-zinc-50 md:col-span-3"
       >
         <a
           href="#"
           className="grid h-full place-content-center text-3xl text-black"
         >
-          <MdMovieCreation />
+          <IoLogoGithub />
         </a>
       </Block>
     </div>
