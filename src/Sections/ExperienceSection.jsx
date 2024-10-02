@@ -3,10 +3,13 @@ import {
   useMotionValue,
   motion,
   animate,
+  useScroll,
 } from "framer-motion";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { COLORS_TOP } from "../Utilities/Constants";
 import Timeline from "../AnimatedComponents/AnimatedTimeline";
+import CustomSection from "../Components/CustomSection";
+import ExperienceContainer from "../AnimatedComponents/ExperienceContainer";
 
 function ExperienceSection() {
   const color = useMotionValue(COLORS_TOP[0]);
@@ -14,6 +17,12 @@ function ExperienceSection() {
   const borderBottom = useMotionTemplate`1px solid ${color}`;
   const boxShadow = useMotionTemplate` 0px 4px 24px ${color}`;
   const contentBorder = useMotionTemplate`1px solid ${color}`;
+
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+  });
+
   useEffect(() => {
     animate(color, COLORS_TOP, {
       ease: "easeInOut",
@@ -23,17 +32,7 @@ function ExperienceSection() {
     });
   }, []);
   return (
-    <motion.section
-      style={{ zIndex: 10 }}
-      initial={{ y: 0 }}
-      animate={{ y: [0, -10, 0] }} // Moving up and down
-      transition={{
-        duration: 3, // Duration of one cycle of the animation
-        repeat: Infinity, // Looping the animation indefinitely
-        ease: "easeInOut", // Smooth easing
-      }}
-      className="items-center flex flex-col justify-center py-10 w-4/5 md:w-full"
-    >
+    <CustomSection>
       <motion.h1
         style={{
           borderBottom,
@@ -51,10 +50,51 @@ function ExperienceSection() {
         Work Experience
       </motion.h1>
 
-      <motion.div>
-        <Timeline />
+      <motion.div ref={ref} className=" w-full relative">
+        <div className="absolute -left-[5rem] top-0 w-[4px] h-full bg-white origin-top" />
+        <ExperienceContainer
+          position={"Lead Front-End Developer"}
+          company={"Asqii LLC"}
+          companyLink={"https://schooldesk.cc/"}
+          time={"2021-2023"}
+          address={"Accra,Ghana"}
+          work={
+            "Designed user-centered digital experiences for a wide range of clients,Built responsive and user-friendly interfaces using HTML, CSS, and JavaScript. "
+          }
+        />
+        <ExperienceContainer
+          position={"Lead Front-End Developer"}
+          company={"Asqii LLC"}
+          companyLink={"https://schooldesk.cc/"}
+          time={"2021-2023"}
+          address={"Accra,Ghana"}
+          work={
+            "Designed user-centered digital experiences for a wide range of clients,Built responsive and user-friendly interfaces using HTML, CSS, and JavaScript. "
+          }
+        />
+        <ExperienceContainer
+          position={"Lead Front-End Developer"}
+          company={"Asqii LLC"}
+          companyLink={"https://schooldesk.cc/"}
+          time={"2021-2023"}
+          address={"Accra,Ghana"}
+          work={
+            "Designed user-centered digital experiences for a wide range of clients,Built responsive and user-friendly interfaces using HTML, CSS, and JavaScript. "
+          }
+        />
+        <ExperienceContainer
+          position={"Lead Front-End Developer"}
+          company={"Asqii LLC"}
+          companyLink={"https://schooldesk.cc/"}
+          time={"2021-2023"}
+          address={"Accra,Ghana"}
+          work={
+            "Designed user-centered digital experiences for a wide range of clients,Built responsive and user-friendly interfaces using HTML, CSS, and JavaScript. "
+          }
+        />
+        {/* <Timeline /> */}
       </motion.div>
-    </motion.section>
+    </CustomSection>
   );
 }
 
