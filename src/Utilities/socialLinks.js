@@ -1,5 +1,6 @@
 import { BsBehance } from "react-icons/bs";
 import {
+  IoLogoBehance,
   IoLogoGithub,
   IoLogoLinkedin,
   IoLogoTwitch,
@@ -21,5 +22,10 @@ export const socialLinks = [
     linkName: "Twitter",
     linkIcon: <IoLogoTwitter />,
     href: "https://x.com/wk_gyasi",
+  },
+  {
+    linkName: "Behance",
+    linkIcon: <IoLogoBehance />,
+    href: "https://www.behance.net/wkkgyasi",
   },
 ];

@@ -123,6 +123,7 @@ const HomePageHeroSection = () => {
               whileTap={{
                 scale: 0.985,
               }}
+              onClick={() => navigate("/about")}
               className="relative cursor-pointer flex w-fit items-center gap-1.5 xs:text-xs rounded-md bg-gray-950/10 px-5 py-3 text-gray-50 transition-colors hover:bg-gray-950/50"
             >
               View Resume
