@@ -1,4 +1,5 @@
 import React from "react";
+import AnimatedCircles from "./AnimatedCircles";
 
 function ExperienceContainer({
   position,
@@ -10,9 +11,10 @@ function ExperienceContainer({
 }) {
   return (
     <div
-      className="my-8 md:my-1 w-[60%] bg-pink-900 mx-auto flex flex-col
-     items-center justify-between"
+      className="my-8 md:my-1 w-[60%]  mx-auto flex flex-col
+     items-center justify-between relative"
     >
+      <AnimatedCircles />
       <h3 className="capitalize font-bold text-2xl">
         {position} &nbsp;
         <a

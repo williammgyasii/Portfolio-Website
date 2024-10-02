@@ -21,6 +21,7 @@ function ExperienceSection() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
+    offset: ["start end", "center start"],
   });
 
   useEffect(() => {
@@ -51,7 +52,10 @@ function ExperienceSection() {
       </motion.h1>
 
       <motion.div ref={ref} className=" w-full relative">
-        <div className="absolute -left-[5rem] top-0 w-[4px] h-full bg-white origin-top" />
+        <motion.div
+          style={{ scaleY: scrollYProgress }}
+          className="absolute left-[5rem] top-0 w-[4px] h-full bg-white origin-top"
+        />
         <ExperienceContainer
           position={"Lead Front-End Developer"}
           company={"Asqii LLC"}
