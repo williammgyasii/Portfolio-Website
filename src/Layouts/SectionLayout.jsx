@@ -8,7 +8,7 @@ function SectionLayout({ children, sectionId, className }) {
       style={{ zIndex: 10 }}
       className={`items-center flex flex-col justify-center xs:mt-huge mt-xsHuge w-4/5 md:w-full ${className}`}
     >
-      <AnimatePresence>{children}</AnimatePresence>
+      <AnimatePresence mode="wait">{children}</AnimatePresence>
     </motion.section>
   );
 }

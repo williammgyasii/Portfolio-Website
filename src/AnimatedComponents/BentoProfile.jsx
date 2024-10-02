@@ -5,6 +5,7 @@ import { FiArrowRight, FiMail, FiMapPin } from "react-icons/fi";
 import myImage from "../Assets/SSS-2442.jpg";
 import { MdMovieCreation } from "react-icons/md";
 import { IoLogoGithub } from "react-icons/io5";
+import { socialLinks } from "../Utilities/socialLinks";
 
 export const Block = ({ className, ...rest }) => {
   return (
@@ -76,11 +77,7 @@ export const FirstColumn = () => (
 export const SecondColumn = () => (
   // Image container
   <>
-    <Block
-      whileHover={{
-        rotate: "2.5deg",
-        scale: 1.1,
-      }}
+    <motion.div
       className="col-span-4 grid rounded-lg h-[25rem] overflow-hidden flex items-center justify-center
        bg-transparent cursor-pointer p-0 md:col-span-3"
     >
@@ -90,13 +87,13 @@ export const SecondColumn = () => (
         style={{ objectPosition: "center 25%" }} // Adjust as needed
         className="object-cover w-full h-full"
       />
-    </Block>
+    </motion.div>
   </>
 );
 
 export const ThirdColumn = () => (
   <>
-    <div className="col-span-2 grid bg-red-700">
+    <div className="col-span-2 grid">
       <Block
         whileHover={{
           rotate: "-2.5deg",
@@ -104,24 +101,29 @@ export const ThirdColumn = () => (
         }}
         className="col-span-2 flex flex-col mb-2 justify-center items-center bg-green-600 md:col-span-3"
       >
-        <h1 className="text-6xl font-bold">4+</h1>
+        <h1 className="text-5xl font-bold">4+</h1>
         <span className="text-md">Experience </span>
       </Block>
 
-      <Block
-        whileHover={{
-          rotate: "-2.5deg",
-          scale: 1.1,
-        }}
-        className="col-span-2 row-span-4 bg-zinc-50 md:col-span-3"
-      >
-        <a
-          href="#"
-          className="grid h-full place-content-center text-3xl text-black"
-        >
-          <IoLogoGithub />
-        </a>
-      </Block>
+      {socialLinks.map((link, index) => {
+        return (
+          <Block
+            key={index.toString()}
+            whileHover={{
+              rotate: "-2.5deg",
+              scale: 1.1,
+            }}
+            className="col-span-2 mb-1 bg-zinc-50 md:col-span-3"
+          >
+            <a
+              href={link.href}
+              className="grid h-full place-content-center text-3xl text-black"
+            >
+              {link.linkIcon}
+            </a>
+          </Block>
+        );
+      })}
     </div>
   </>
 );

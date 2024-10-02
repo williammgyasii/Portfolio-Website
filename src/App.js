@@ -12,6 +12,8 @@ import HomePage from "./Pages/HomePage";
 import RootLayout from "./Layouts/RootLayout";
 import AboutPage from "./Pages/AboutPage";
 import ProjectsPage from "./Pages/ProjectsPage";
+import SwipeTransition from "./AnimatedComponents/SwipeTransition";
+import ColorSwipeTransition from "./AnimatedComponents/SwipeTransition";
 
 function App() {
   const router = createBrowserRouter(
