@@ -15,8 +15,7 @@ import {
   SocialsBlock,
 } from "../AnimatedComponents/BentoProfile";
 import skillStack from "./SkillsStack";
-
-const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
+import { COLORS_TOP } from "../Utilities/Constants";
 
 const AboutSkillsSection = () => {
   const color = useMotionValue(COLORS_TOP[0]);

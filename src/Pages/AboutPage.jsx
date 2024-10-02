@@ -7,6 +7,7 @@ import SkillsSection from "../Components/SkillsSection";
 import Header from "../Components/Header";
 import AboutHeroSection from "../Components/AboutHeroSection";
 import AboutSkillsSection from "../Components/SkillsSection";
+import ExperienceSection from "../Sections/ExperienceSection";
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 
 const AboutPage = () => {
@@ -28,6 +29,7 @@ const AboutPage = () => {
       >
         <AboutHeroSection />
         <AboutSkillsSection />
+        <ExperienceSection />
         {/* ABOUT EXPERIENCE <SECTION> */}
         {/* ABOUT EDUCATION SECTION
         </SECTION> */}
