@@ -6,6 +6,7 @@ import {
 } from "framer-motion";
 import React, { useEffect } from "react";
 import { COLORS_TOP } from "../Utilities/Constants";
+import Timeline from "../AnimatedComponents/AnimatedTimeline";
 
 function ExperienceSection() {
   const color = useMotionValue(COLORS_TOP[0]);
@@ -51,7 +52,7 @@ function ExperienceSection() {
       </motion.h1>
 
       <motion.div>
-        
+        <Timeline />
       </motion.div>
     </motion.section>
   );
