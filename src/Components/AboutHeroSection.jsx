@@ -7,10 +7,10 @@ import {
 } from "framer-motion";
 import {
   AboutBlock,
-  EmailListBlock,
-  HeaderBlock,
+  FirstColumn,
   ImageBlock,
-  SocialsBlock,
+  SecondBlock,
+  SecondColumn,
 } from "../AnimatedComponents/BentoProfile";
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
@@ -60,10 +60,9 @@ const AboutHeroSection = () => {
           }}
           className="mx-auto grid grid-flow-dense grid-cols-12 md:grid-cols-6 gap-1"
         >
-          <HeaderBlock border={borderBottom} boxShadow={boxShadow} />
-          <ImageBlock />
-          <AboutBlock />
-          {/* <EmailListBlock /> */}
+          <FirstColumn border={borderBottom} boxShadow={boxShadow} />
+          <SecondColumn />
+          
         </motion.div>
       </div>
     </motion.section>

@@ -35,7 +35,7 @@ export const Block = ({ className, ...rest }) => {
   );
 };
 
-export const HeaderBlock = () => (
+export const FirstColumn = () => (
   <>
     <div className="col-span-6 row-span-1 md:col-span-6 gap-2">
       <Block className={"col-span-6"}>
@@ -55,14 +55,25 @@ export const HeaderBlock = () => (
           View Projects <FiArrowRight />
         </a>
       </Block>
-      <Block className={"col-span-6"}>
-        <AboutBlock />
+
+      <Block className={"col-span-6 mt-2"}>
+        <h1 className=" text-xl font-light leading-tight text-center md:text-sm">
+          I look forward to the opportunity to bring my skills and passion to
+          your next project.
+          <br />
+          <span className="text-zinc-400">
+            Whether I'm working on a website, mobile app, or other digital
+            product, I bring my commitment to design excellence and
+            user-centered thinking to every project I work on.{" "}
+          </span>
+        </h1>
       </Block>
     </div>
   </>
 );
 
-export const ImageBlock = () => (
+export const SecondColumn = () => (
+  // Image container
   <>
     <Block
       whileHover={{
@@ -109,32 +120,11 @@ export const ImageBlock = () => (
   </>
 );
 
-export const AboutBlock = () => (
+export const ThirdColumn = () => (
   <>
-    {/* <Block className="col-span-6 text-xl leading-snug">
-      <p>
-        Alter Egos
-        <span className="text-zinc-400 text-sm">
-          {" "}
-          has been driven by a deep love for creating{" "}
-          <span className="text-blue-400 text-2xl"> BEAUTIFUL </span>,
-          functional, and
-          <span className="text-yellow-400  text-2xl"> USER-FRIENDLY </span>
-          experiences.
-        </span>
-      </p>
-    </Block> */}
-    <Block className="col-span-6 text-xl leading-snug">
-      <h1 className="mb-3 text-xl font-light leading-tight text-center md:text-sm">
-        I look forward to the opportunity to bring my skills and passion to your
-        next project.
-        <span className="text-zinc-400">
-          Whether I'm working on a website, mobile app, or other digital
-          product, I bring my commitment to design excellence and user-centered
-          thinking to every project I work on.{" "}
-        </span>
-      </h1>
-    </Block>
+    <div className="col-span-2">
+      
+    </div>
   </>
 );
 
