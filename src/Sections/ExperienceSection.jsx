@@ -54,7 +54,7 @@ function ExperienceSection() {
       <motion.div ref={ref} className=" w-full relative">
         <motion.div
           style={{ scaleY: scrollYProgress }}
-          className="absolute left-[5rem] top-0 w-[4px] h-full bg-white origin-top"
+          className="absolute left-[0rem] top-0 w-[4px] h-full bg-white origin-top"
         />
         <ExperienceContainer
           position={"Lead Front-End Developer"}

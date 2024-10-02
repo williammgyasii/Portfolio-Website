@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import AnimatedCircles from "./AnimatedCircles";
 
 function ExperienceContainer({
@@ -9,12 +9,14 @@ function ExperienceContainer({
   address,
   work,
 }) {
+  const ref = useRef(null);
   return (
     <div
+      ref={ref}
       className="my-8 md:my-1 w-[60%]  mx-auto flex flex-col
-     items-center justify-between relative"
+     items-center justify-between"
     >
-      <AnimatedCircles />
+      <AnimatedCircles reference={ref} />
       <h3 className="capitalize font-bold text-2xl">
         {position} &nbsp;
         <a
@@ -25,7 +27,7 @@ function ExperienceContainer({
           @{company}
         </a>
       </h3>
-      <span className="capitalize font-medium text-dark/75">
+      <span className="capitalize font-medium text-white/75">
         {time} | {address}
       </span>
       <p className="font-medium w-full">{work}</p>
