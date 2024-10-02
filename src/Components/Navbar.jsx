@@ -144,7 +144,11 @@ const Navbar = () => {
         <CustomLink href="/" title={"Home"} className="mr-2" />
         <CustomLink href="/about" title={"About"} className="mx-2" />
         <CustomLink href="/projects" title={"Projects"} className="mx-2" />
-        <CustomLink href="/articles" title={"Articles"} className="ml-2" />
+        <CustomLink
+          href="/testimonials"
+          title={"Testimonials"}
+          className="ml-2"
+        />
       </nav>
 
       <nav className="mt-2 sm:hidden">

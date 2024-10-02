@@ -15,7 +15,7 @@ const AboutPage = () => {
   const borderBottom = useMotionTemplate`1px solid ${color}`;
   const boxShadow = useMotionTemplate`0px 4px 24px ${color}`;
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
-  
+
   return (
     <>
       <Header />
@@ -23,12 +23,13 @@ const AboutPage = () => {
         style={{
           backgroundImage,
         }}
-        className=" flex flex-col bg-green-700  text-white w-full  items-center min-h-screen xs:min-h-0 "
+        className=" flex flex-col bg-green-700 
+         text-white w-full items-center xs:min-h-0 "
       >
         <AboutHeroSection />
         <AboutSkillsSection />
         {/* ABOUT EXPERIENCE <SECTION> */}
-          {/* ABOUT EDUCATION SECTION
+        {/* ABOUT EDUCATION SECTION
         </SECTION> */}
       </motion.main>
 

@@ -78,13 +78,13 @@ export const SecondColumn = () => (
   // Image container
   <>
     <motion.div
-      className="col-span-4 grid rounded-lg h-[25rem] overflow-hidden flex items-center justify-center
-       bg-transparent cursor-pointer p-0 md:col-span-3"
+      className="col-span-4 md:col-span-4 grid rounded-lg h-[25rem] overflow-hidden flex items-center justify-center
+       bg-transparent cursor-pointer p-0"
     >
       <img
         src={myImage}
-        alt="Sample"
-        style={{ objectPosition: "center 25%" }} // Adjust as needed
+        alt="My Personal Image"
+        style={{ objectPosition: "center top" }} // Adjust as needed
         className="object-cover w-full h-full"
       />
     </motion.div>
@@ -93,16 +93,16 @@ export const SecondColumn = () => (
 
 export const ThirdColumn = () => (
   <>
-    <div className="col-span-2 grid">
+    <div className="col-span-2 grid md:col-auto ">
       <Block
         whileHover={{
           rotate: "-2.5deg",
           scale: 1.1,
         }}
-        className="col-span-2 flex flex-col mb-2 justify-center items-center bg-green-600 md:col-span-3"
+        className="col-span-2 flex md:p-1 flex-col mb-2 justify-center items-center bg-green-600"
       >
-        <h1 className="text-5xl font-bold">4+</h1>
-        <span className="text-md">Experience </span>
+        <h1 className="text-5xl font-bold md:text-4xl">4+</h1>
+        <span className="text-md md:text-sm">Experience </span>
       </Block>
 
       {socialLinks.map((link, index) => {
@@ -113,7 +113,7 @@ export const ThirdColumn = () => (
               rotate: "-2.5deg",
               scale: 1.1,
             }}
-            className="col-span-2 mb-1 bg-zinc-50 md:col-span-3"
+            className="col-span-2 mb-1 bg-zinc-50"
           >
             <a
               href={link.href}
