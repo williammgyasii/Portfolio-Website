@@ -53,11 +53,11 @@ function ExperienceSection() {
 
       <motion.div
         ref={ref}
-        className=" w-full flex flex-col items-center justify-center -mt-4 pb-[10rem] relative"
+        className=" w-full bg-blue-900 flex flex-col items-center justify-center relative"
       >
-        <motion.div
+        {/* <motion.div
           style={{ scaleY: scrollYProgress }}
-          className="absolute left-[0rem] top-0 w-[4px] h-full bg-white origin-top"
+          className="absolute left-0 right-0 top-0 bottom-0 w-[5px] h-full bg-white origin-top"
         />
         <ExperienceContainer
           position={"Lead Front-End Developer"}
@@ -68,7 +68,7 @@ function ExperienceSection() {
           work={
             "Designed user-centered digital experiences for a wide range of clients,Built responsive and user-friendly interfaces using HTML, CSS, and JavaScript. "
           }
-        />
+        /> */}
 
         {/* <Timeline /> */}
       </motion.div>
