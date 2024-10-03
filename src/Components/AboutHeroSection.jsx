@@ -6,10 +6,8 @@ import {
   useMotionValue,
 } from "framer-motion";
 import {
-  AboutBlock,
   FirstColumn,
-  ImageBlock,
-  SecondBlock,
+
   SecondColumn,
   ThirdColumn,
 } from "../AnimatedComponents/BentoProfile";
