@@ -64,30 +64,6 @@ const ProjectsPage = () => {
         <StarryBackgroundNoHover />
         <ProjectHeroSection />
 
-        <SectionLayout className={"mt-10"} sectionId={"#otherProjects"}>
-          <div className=" w-full">
-            {projects.length > 0 && (
-              <div className="grid grid-cols-6 gap-10  ">
-                {projects.map((project, index) => (
-                  <ProjectBox
-                    style={{
-                      border,
-                      // boxShadow
-                    }}
-                    className={"p-2 rounded-lg col-span-3 sm:col-span-6"}
-                    key={index}
-                    imageSrc={project.imageSrc}
-                    title={project.title}
-                    description={project.description}
-                    technologies={project.technologies}
-                    projectLink={project.projectLink}
-                    isFeatured={project.isFeatured}
-                  />
-                ))}
-              </div>
-            )}
-          </div>
-        </SectionLayout>
       </motion.main>
     </>
   );

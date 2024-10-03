@@ -145,8 +145,13 @@ const ProjectBox = ({
         </div>
 
         <Block className="mb-3 w-[80%] h-[13rem] bg-white ">
-          <p className="text-sm  text-dark text-center sm:text-xs">
-            {description}
+          <p className="text-md text-dark text-center sm:text-xs">
+            <span className="text-zinc-400">
+              {" "}
+              {description}
+              specializing in React for web development and React Native for
+              mobile applications.
+            </span>
           </p>
         </Block>
 
