@@ -1,14 +1,15 @@
 export const workExperience = [
     {
-      company: "TechCorp",
-      position: "Software Engineer",
-      date: "2022 - Present",
+      company: "ASQII",
+      position: "Lead Front-End Developer",
+      date: "July 2020 - August 2023",
       description: [
-        "Developed and maintained web applications using React and Node.js.",
-        "Collaborated with cross-functional teams to deliver products on time.",
+        "Developed and maintained an international school management system using React.js, leveraging automated testing and continuous integration strategies.",
+        "Transferred and maintained company electron codebase to react codebase to improve accessibility for users and school managers which increase clients by 2%.",
         "Optimized code performance to reduce load times by 20%.",
+        "Leveraged Unit Testing and Automated Testing techniques across technology solutions"
       ],
-      address: "123 Tech Street, Silicon Valley, CA",
+      address: "Accra,Ghana",
     },
     {
       company: "Web Solutions",
