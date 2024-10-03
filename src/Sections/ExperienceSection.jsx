@@ -33,7 +33,7 @@ function ExperienceSection() {
     });
   }, []);
   return (
-    <CustomSection className={""}>
+    <CustomSection className={"mb-[10rem]"}>
       <motion.h1
         style={{
           borderBottom,
@@ -55,6 +55,7 @@ function ExperienceSection() {
         ref={ref}
         className=" w-full bg-blue-900 flex flex-col items-center justify-center relative"
       >
+        <Timeline />
         {/* <motion.div
           style={{ scaleY: scrollYProgress }}
           className="absolute left-0 right-0 top-0 bottom-0 w-[5px] h-full bg-white origin-top"
