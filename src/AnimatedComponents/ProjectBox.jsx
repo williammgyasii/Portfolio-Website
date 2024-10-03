@@ -134,8 +134,8 @@ const ProjectBox = ({
           </a>
         </div>
 
-        <Block className="mb-3 w-[80%] h-[13rem] bg-white ">
-          <p className="text-md text-dark text-center sm:text-xs">
+        <Block className="mb-3 w-[80%] h-[13rem] md:w-full bg-white ">
+          <p className="text-md lg:text-xs text-dark text-center sm:text-xs">
             <span className="text-zinc-400">
               {" "}
               {description}

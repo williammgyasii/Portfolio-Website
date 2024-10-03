@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import FadeInOnScroll from "../AnimatedComponents/FadeInOnScroll";
 import ProjectBox from "../AnimatedComponents/ProjectBox";
 import localImage from "../Assets/Akron-Splash.png"; // Import your local image
 
@@ -61,11 +60,11 @@ const ProjectTabs = () => {
   return (
     <div className="w-full p-8">
       {/* Tab Layout with animated tab transitions */}
-      <motion.div className="flex justify-center mb-8 space-x-4">
+      <motion.div className="flex xs:flex-col flex-row justify-center xs:mb-8 space-x-2 mb-8">
         {["All", "Web", "Mobile"].map((tab, index) => (
           <motion.button
             key={index}
-            className={`px-6 py-2 rounded-md text-lg font-medium ${
+            className={`px-6 py-2 sm:mb-2 rounded-md text-lg font-medium ${
               activeTab === tab
                 ? "bg-purple-500 text-white"
                 : "bg-gray-200 text-dark"
@@ -86,12 +85,12 @@ const ProjectTabs = () => {
       </motion.div>
 
       {/* Project Cards with spring animation */}
-      <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <motion.div className="grid grid-cols-6 gap-6">
         <AnimatePresence mode="wait">
           {paginatedProjects.map((project) => (
             <motion.div
               key={project.id}
-              className="w-full bg-zinc-800 flex rounded-md justify-center p-5"
+              className="w-full bg-zinc-800 col-span-6 flex rounded-md justify-center p-5"
               variants={projectVariants}
               initial="hidden"
               animate="visible"
@@ -101,7 +100,13 @@ const ProjectTabs = () => {
                 imageSrc={localImage}
                 title={project.title}
                 description="Discover a powerful task management app designed for seamless group collaboration. Built with React and Material-UI."
-                technologies={["Firebase", "Material-UI", "JavaScript", "React", "Redux"]}
+                technologies={[
+                  "Firebase",
+                  "Material-UI",
+                  "JavaScript",
+                  "React",
+                  "Redux",
+                ]}
                 projectLink="https://akron-server.web.app/"
               />
             </motion.div>
@@ -110,22 +115,26 @@ const ProjectTabs = () => {
       </motion.div>
 
       {/* Pagination Controls */}
-      <div className="flex justify-center mt-8 space-x-4">
+      <div className="flex flex-row  items-center mt-8 justify-center">
         <button
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
-          className={`px-4 py-2 rounded-md ${
+          className={`px-4 py-2 text-sm rounded-md ${
             currentPage === 1 ? "bg-gray-300" : "bg-purple-500 text-white"
           }`}
         >
           Previous
         </button>
-        <span className="px-4 py-2">Page {currentPage} of {totalPages}</span>
+        <span className="px-4 py-2 xs:text-xs text-center">
+          Page {currentPage} of {totalPages}
+        </span>
         <button
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
-          className={`px-4 py-2 rounded-md ${
-            currentPage === totalPages ? "bg-gray-300" : "bg-purple-500 text-white"
+          className={`px-4 py-2 text-sm rounded-md ${
+            currentPage === totalPages
+              ? "bg-gray-300"
+              : "bg-purple-500 text-white"
           }`}
         >
           Next
