@@ -125,7 +125,7 @@ const ProjectBox = ({
       >
         <div className={`sm:flex sm:justify-between sm:items-center sm:w-full`}>
           {isFeatured && (
-            <span className="text-white font-medium text-sm border border-pink-300 p-2 rounded-lg">
+            <span className="text-blue-500 font-medium text-sm border border-blue-300 p-2 rounded-lg">
               Featured Project
             </span>
           )}
@@ -144,9 +144,12 @@ const ProjectBox = ({
           </a>
         </div>
 
-        <Block className="mb-3 w-full ">
-          <p className="text-sm  text-center sm:text-xs">{description}</p>
+        <Block className="mb-3 w-[80%] h-[13rem] bg-white ">
+          <p className="text-sm  text-dark text-center sm:text-xs">
+            {description}
+          </p>
         </Block>
+
         <div className="mb-1 flex items-center flex-wrap justify-center">
           {technologies.map((tech, index) => (
             <span
@@ -159,18 +162,15 @@ const ProjectBox = ({
         </div>
         <motion.button
           onClick={openInNewTab}
-          style={{
-            backgroundColor: "green",
-            border,
-            boxShadow,
-          }}
           whileHover={{
             scale: 1.015,
           }}
           whileTap={{
             scale: 0.985,
           }}
-          className="relative cursor-pointer flex w-fit items-center gap-1.5  rounded-md bg-green-950/10 px-4 py-2 xs:px-2 xs:text-xs text-yellow-50 transition-colors hover:bg-gray-950/50"
+          className="relative bg-blue-800 cursor-pointer flex w-fit items-center gap-1.5  
+          rounded-md bg-green-950/10 px-4 py-2 xs:px-2 xs:text-xs text-yellow-50 
+          transition-colors hover:bg-blue-900"
         >
           View Project
           <FiArrowRightCircle className="transition-transform group-hover:-rotate-45 group-active:-rotate-12" />
