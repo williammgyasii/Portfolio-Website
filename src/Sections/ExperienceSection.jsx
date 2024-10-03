@@ -53,9 +53,9 @@ function ExperienceSection() {
 
       <motion.div
         ref={ref}
-        className=" w-full bg-blue-900 flex flex-col items-center justify-center relative"
+        className=" w-full flex flex-col items-center justify-center relative"
       >
-        <Timeline />
+        <Timeline animatedColor={color} />
         {/* <motion.div
           style={{ scaleY: scrollYProgress }}
           className="absolute left-0 right-0 top-0 bottom-0 w-[5px] h-full bg-white origin-top"

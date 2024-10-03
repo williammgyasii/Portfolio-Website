@@ -1,5 +1,12 @@
 import React, { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
+import {
+  animate,
+  motion,
+  useAnimation,
+  useMotionTemplate,
+  useMotionValue,
+} from "framer-motion";
+import { COLORS_TOP } from "../Utilities/Constants";
 
 // Sample data for work experience
 const workExperience = [
@@ -7,7 +14,6 @@ const workExperience = [
     company: "TechCorp",
     position: "Software Engineer",
     date: "2022 - Present",
-    position: "left",
     description: [
       "Developed and maintained web applications using React and Node.js.",
       "Collaborated with cross-functional teams to deliver products on time.",
@@ -19,7 +25,6 @@ const workExperience = [
     company: "Web Solutions",
     position: "Frontend Developer",
     date: "2020 - 2022",
-    position: "right",
     description: [
       "Built responsive and user-friendly interfaces using HTML, CSS, and JavaScript.",
       "Worked with the UX team to improve design efficiency.",
@@ -37,14 +42,21 @@ const workExperience = [
       "Presented design solutions to stakeholders and received positive feedback.",
     ],
     address: "789 Creative Road, Austin, TX",
-    position: "left",
   },
 ];
 
-const Timeline = () => {
+const Timeline = ({}) => {
   const controls = useAnimation(); // Control for the purple line animation
-
+  const color = useMotionValue(COLORS_TOP[2]);
+  const border = useMotionTemplate`10px solid ${color}`;
+ 
   useEffect(() => {
+    animate(color, COLORS_TOP, {
+      ease: "easeInOut",
+      duration: 10,
+      repeat: Infinity,
+      repeatType: "mirror",
+    });
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       controls.start({
@@ -58,19 +70,17 @@ const Timeline = () => {
   }, [controls]);
 
   return (
-    <div className="relative flex bg-yellow-700 flex-col items-center ">
+    <div className="relative flex w-full  flex-col items-center ">
       {/* Vertical timeline purple line */}
       <motion.div
-        className="absolute bg-purple-500 left-1/2 transform -translate-x-1/2"
+        className="absolute left-[10rem] bg-purple-500"
         style={{ width: "5px", height: "0px" }} // Start at 0px height
         animate={controls} // Controlled by scroll position
       />
 
       {workExperience.map((job, index) => (
         <motion.div
-          className={`w-full bg-pink-300 w-1/2 p-6 mb-8 flex ${
-            index % 2 === 0 ? "flex-row-reverse" : "flex-row"
-          } items-center`}
+          className={`w-2/3 my-3 flex  items-center`}
           key={index}
           initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -78,11 +88,16 @@ const Timeline = () => {
           viewport={{ once: true, amount: 0.3 }} // Trigger animation when in view
         >
           {/* Dot on the timeline */}
-          <div className="w-4 h-4 bg-purple-500 rounded-full absolute left-1/2 transform -translate-x-1/2"></div>
+          {/* <div className="w-4 h-4 left-[10rem] top-0 text-4xl bg-purple-500 rounded-full absolute left-1/2 transform -translate-x-1/2">
+            0{++index}
+          </div> */}
 
           {/* Timeline content */}
-          <div className="bg-white p-6 shadow-lg rounded-lg border border-gray-200 w-full md:w-10/12 font-inter">
-            <h3 className="text-lg font-bold">{job.position}</h3>
+          <div
+            style={{ border: `10px solid ${border}` }}
+            className="bg-white/90 p-4 shadow-lg rounded-lg w-full md:w-10/12 font-inter"
+          >
+            <h3 className="text-4xl text-primary font-bold">{job.position}</h3>
             <h4 className="text-gray-700">{job.company}</h4>
             <span className="text-sm text-gray-500">{job.date}</span>
             <span className="block text-sm text-gray-500 mt-1">
