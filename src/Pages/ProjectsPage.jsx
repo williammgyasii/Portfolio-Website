@@ -12,6 +12,7 @@ import AnimatedVerticalView from "../AnimatedComponents/AnimatedVerticalView";
 import { projects } from "../Utilities/projects";
 import ProjectBox from "../AnimatedComponents/ProjectBox";
 import SectionLayout from "../Layouts/SectionLayout";
+import ProjectTabs from "../Components/ProjectTabs";
 
 const COLORS_TOP = [
   "#FF6F61", // Coral
@@ -64,6 +65,9 @@ const ProjectsPage = () => {
         <StarryBackgroundNoHover />
         <ProjectHeroSection />
 
+        <SectionLayout className={"mt-4"} sectionId={"#otherProjects"}>
+          <ProjectTabs />
+        </SectionLayout>
       </motion.main>
     </>
   );

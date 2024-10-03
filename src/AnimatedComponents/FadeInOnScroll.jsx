@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 
 const FadeInOnScroll = ({ children }) => {
   return (
-    <div className="h-screen flex justify-center items-center">
+    <div className="flex justify-center items-center w-full">
       <motion.div
-        className="w-64 h-64 bg-purple-500 text-white flex justify-center items-center"
+        className=" text-white"
         initial={{ opacity: 0 }} // Start with opacity 0 (invisible)
         whileInView={{ opacity: 1 }} // Fade in when in view
         exit={{ opacity: 0 }} // Fade out when leaving view

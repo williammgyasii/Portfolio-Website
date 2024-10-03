@@ -94,20 +94,12 @@ const ProjectBox = ({
 
   return (
     <motion.div
-      className={`flex sm:flex-col sm:items-center sm:justify-center ${
-        isFeatured ? "flex-row " : "flex-col"
-      }
-    ${isFeatured ? "items-normal" : "items-center"}
-    ${isFeatured ? "" : "w-full"}
-    ${isFeatured ? "h-[23rem]" : "h-[25rem]"}
+      className={`flex sm:flex-col sm:items-center sm:justify-center flex-row h-[23rem]
+
         ${className} sm:h-[30rem]`}
       style={style}
     >
-      <div
-        className={`sm:w-full ${
-          isFeatured ? "w-1/3" : "w-full"
-        }  relative overflow-hidden rounded-lg`}
-      >
+      <div className={`sm:w-full w-1/3  relative overflow-hidden rounded-lg`}>
         <img
           src={imageSrc}
           alt={`${title} Image`}
@@ -117,9 +109,7 @@ const ProjectBox = ({
         />
       </div>
       <div
-        className={`${
-          isFeatured ? "w-2/3" : "w-full"
-        }  text-white  items-center ${
+        className={`w-2/3  text-white  items-center ${
           isFeatured ? "pl-6 " : "pl-0"
         } flex flex-col sm:w-full  sm:pl-0`}
       >
