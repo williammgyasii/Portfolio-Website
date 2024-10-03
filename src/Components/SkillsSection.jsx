@@ -43,7 +43,7 @@ const AboutSkillsSection = () => {
         repeat: Infinity, // Looping the animation indefinitely
         ease: "easeInOut", // Smooth easing
       }}
-      className="items-center flex flex-col justify-center pb-10 w-4/5 md:w-full"
+      className="items-center flex flex-col justify-center pb-10 w-4/5 md:w-full my-[6rem]"
     >
       <motion.h1
         style={{

@@ -33,7 +33,7 @@ function ExperienceSection() {
     });
   }, []);
   return (
-    <CustomSection>
+    <CustomSection className={""}>
       <motion.h1
         style={{
           borderBottom,
@@ -45,13 +45,16 @@ function ExperienceSection() {
           scale: 0.985,
         }}
         className="inline-block text-4xl items-center cursor-pointer 
-        xs:text-lg rounded-md bg-gray-950/10 px-4 mb-4 py-3 text-gray-50 
+        xs:text-lg rounded-md bg-gray-950/10 px-4 py-1 text-gray-50 
         transition-colors hover:bg-gray-950/50"
       >
         Work Experience
       </motion.h1>
 
-      <motion.div ref={ref} className=" w-full relative">
+      <motion.div
+        ref={ref}
+        className=" w-full flex flex-col items-center justify-center -mt-4 pb-[10rem] relative"
+      >
         <motion.div
           style={{ scaleY: scrollYProgress }}
           className="absolute left-[0rem] top-0 w-[4px] h-full bg-white origin-top"
@@ -66,36 +69,7 @@ function ExperienceSection() {
             "Designed user-centered digital experiences for a wide range of clients,Built responsive and user-friendly interfaces using HTML, CSS, and JavaScript. "
           }
         />
-        <ExperienceContainer
-          position={"Lead Front-End Developer"}
-          company={"Asqii LLC"}
-          companyLink={"https://schooldesk.cc/"}
-          time={"2021-2023"}
-          address={"Accra,Ghana"}
-          work={
-            "Designed user-centered digital experiences for a wide range of clients,Built responsive and user-friendly interfaces using HTML, CSS, and JavaScript. "
-          }
-        />
-        <ExperienceContainer
-          position={"Lead Front-End Developer"}
-          company={"Asqii LLC"}
-          companyLink={"https://schooldesk.cc/"}
-          time={"2021-2023"}
-          address={"Accra,Ghana"}
-          work={
-            "Designed user-centered digital experiences for a wide range of clients,Built responsive and user-friendly interfaces using HTML, CSS, and JavaScript. "
-          }
-        />
-        <ExperienceContainer
-          position={"Lead Front-End Developer"}
-          company={"Asqii LLC"}
-          companyLink={"https://schooldesk.cc/"}
-          time={"2021-2023"}
-          address={"Accra,Ghana"}
-          work={
-            "Designed user-centered digital experiences for a wide range of clients,Built responsive and user-friendly interfaces using HTML, CSS, and JavaScript. "
-          }
-        />
+
         {/* <Timeline /> */}
       </motion.div>
     </CustomSection>

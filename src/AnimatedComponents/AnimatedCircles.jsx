@@ -6,7 +6,6 @@ function AnimatedCircles({ reference }) {
     target: reference,
     offset: ["center end", "center center"],
   });
-  console.log(scrollYProgress);
   return (
     <figure className="absolute left-0 stroke-white">
       <svg className="-rotate-90" width={"75"} height={"75"} viewBox="0 0 100 100">

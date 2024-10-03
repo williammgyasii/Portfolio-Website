@@ -35,7 +35,7 @@ const AboutHeroSection = () => {
     <motion.section
       style={{ zIndex: 10 }}
       className="items-center flex flex-col justify-center 
-      xs:mt-huge my-xsHuge w-4/5 md:w-full"
+      xs:mt-huge mt-[5rem] w-4/5 md:w-full"
     >
       <motion.h1
         style={{

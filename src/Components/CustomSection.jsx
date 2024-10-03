@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-function CustomSection({ children }) {
+function CustomSection({ children, className }) {
   return (
     <motion.section
       style={{ zIndex: 10 }}
@@ -12,7 +12,7 @@ function CustomSection({ children }) {
         repeat: Infinity, // Looping the animation indefinitely
         ease: "easeInOut", // Smooth easing
       }}
-      className="items-center flex flex-col justify-center py-10 w-4/5 md:w-full"
+      className={`items-center flex flex-col justify-center w-4/5 md:w-full ${className}`}
     >
       {children}
     </motion.section>
