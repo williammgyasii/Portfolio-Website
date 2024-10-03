@@ -7,6 +7,7 @@ const workExperience = [
     company: "TechCorp",
     position: "Software Engineer",
     date: "2022 - Present",
+    position: "left",
     description: [
       "Developed and maintained web applications using React and Node.js.",
       "Collaborated with cross-functional teams to deliver products on time.",
@@ -18,6 +19,7 @@ const workExperience = [
     company: "Web Solutions",
     position: "Frontend Developer",
     date: "2020 - 2022",
+    position: "right",
     description: [
       "Built responsive and user-friendly interfaces using HTML, CSS, and JavaScript.",
       "Worked with the UX team to improve design efficiency.",
@@ -35,6 +37,7 @@ const workExperience = [
       "Presented design solutions to stakeholders and received positive feedback.",
     ],
     address: "789 Creative Road, Austin, TX",
+    position: "left",
   },
 ];
 
@@ -55,18 +58,18 @@ const Timeline = () => {
   }, [controls]);
 
   return (
-    <div className="relative flex flex-col items-center my-10">
+    <div className="relative flex bg-yellow-700 flex-col items-center ">
       {/* Vertical timeline purple line */}
       <motion.div
         className="absolute bg-purple-500 left-1/2 transform -translate-x-1/2"
-        style={{ width: "4px", height: "0px" }} // Start at 0px height
+        style={{ width: "5px", height: "0px" }} // Start at 0px height
         animate={controls} // Controlled by scroll position
       />
 
       {workExperience.map((job, index) => (
         <motion.div
-          className={`w-full md:w-1/2 p-6 mb-8 flex ${
-            index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
+          className={`w-full bg-pink-300 w-1/2 p-6 mb-8 flex ${
+            index % 2 === 0 ? "flex-row-reverse" : "flex-row"
           } items-center`}
           key={index}
           initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
