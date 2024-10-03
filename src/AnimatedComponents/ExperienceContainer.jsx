@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import AnimatedCircles from "./AnimatedCircles";
+import { motion } from "framer-motion";
 
 function ExperienceContainer({
   position,
@@ -11,7 +12,10 @@ function ExperienceContainer({
 }) {
   const ref = useRef(null);
   return (
-    <div
+    <motion.div
+      initial={{ y: 50 }}
+      whileInView={{ y: 0 }}
+      transition={{ duration: 0.5, type: "spring" }}
       ref={ref}
       className="my-8 md:my-1 w-[60%]  mx-auto flex flex-col
      items-center justify-between"
@@ -31,7 +35,7 @@ function ExperienceContainer({
         {time} | {address}
       </span>
       <p className="font-medium w-full">{work}</p>
-    </div>
+    </motion.div>
   );
 }
 
