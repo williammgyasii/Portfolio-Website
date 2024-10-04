@@ -31,8 +31,8 @@ const ContactHeroSection = () => {
   return (
     <motion.section
       style={{ zIndex: 10 }}
-      className="items-center flex flex-col justify-center 
-      xs:mt-huge mt-[5rem] w-4/5 md:w-full"
+      className="items-center flex h-screen  flex-col justify-center 
+      xs:mt-huge w-4/5 md:w-full"
     >
       <motion.h1
         style={{
@@ -46,7 +46,7 @@ const ContactHeroSection = () => {
         }}
         className="inline-block text-4xl items-center cursor-pointer xs:text-lg rounded-md bg-gray-950/10 px-4 py-3 text-gray-50 transition-colors hover:bg-gray-950/50"
       >
-        Contact Me 
+        Contact Me
       </motion.h1>
 
       <div className=" px-4 py-2 mt-5 text-zinc-50">

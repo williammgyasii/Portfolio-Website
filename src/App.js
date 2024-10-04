@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Navbar from "./Components/Navbar";
-import HomePageHeroSection from "./Components/HomePageHeroSection";
+import HomePageHeroSection from "./Sections/HomePageHeroSection";
 import {
   createBrowserRouter,
   createRoutesFromElements,

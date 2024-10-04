@@ -285,7 +285,7 @@ const MobileNavLink = ({ title, href }) => {
   return (
     <motion.div
       variants={mobileLinkVars}
-      className="text-5xl uppercase text-white"
+      className="text-4xl uppercase text-white"
     >
       <motion.a whileHover={{ scale: 0.9 }} href={href}>
         {title}

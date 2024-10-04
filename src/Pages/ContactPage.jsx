@@ -18,10 +18,10 @@ function ContactPage() {
           backgroundImage,
         }}
         className=" flex flex-col bg-green-700 
-         text-white w-full items-center xs:min-h-0 "
+         text-white w-full items-center xs:min-h-0"
       >
         <ContactHeroSection />
-        <Block className="col-span-12 md:col-span-9">
+        {/* <Block className="col-span-12 md:col-span-9">
           <p className="mb-3 text-lg">Join my mailing list</p>
           <form
             onSubmit={(e) => e.preventDefault()}
@@ -39,7 +39,7 @@ function ContactPage() {
               <FiMail /> Join the list
             </button>
           </form>
-        </Block>
+        </Block> */}
       </motion.main>
       <StarryBackgroundNoHover />
     </>
