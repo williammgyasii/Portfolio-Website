@@ -149,6 +149,7 @@ const Navbar = () => {
           title={"Testimonials"}
           className="ml-2"
         />
+        <CustomLink href={"/contact"} title={"Contact"} className="mx-2" />
       </nav>
 
       <nav className="mt-2 sm:hidden">
