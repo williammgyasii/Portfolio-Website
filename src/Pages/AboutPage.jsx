@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Navbar from "../Components/Navbar";
 import SkillsSection from "../Components/SkillsSection";
 import Header from "../Components/Header";
-import AboutHeroSection from "../Components/AboutHeroSection";
+import AboutHeroSection from "../Sections/AboutHeroSection";
 import AboutSkillsSection from "../Components/SkillsSection";
 import ExperienceSection from "../Sections/ExperienceSection";
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];

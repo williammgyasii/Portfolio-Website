@@ -15,6 +15,7 @@ import ProjectsPage from "./Pages/ProjectsPage";
 import SwipeTransition from "./AnimatedComponents/SwipeTransition";
 import ColorSwipeTransition from "./AnimatedComponents/SwipeTransition";
 import TestimonialsPage from "./Pages/TestimonialsPage";
+import ContactPage from "./Pages/ContactPage";
 
 function App() {
   const router = createBrowserRouter(
@@ -24,6 +25,7 @@ function App() {
         <Route element={<AboutPage />} path="about" />
         <Route element={<ProjectsPage />} path="projects" />
         <Route element={<TestimonialsPage />} path="testimonials" />
+        <Route element={<ContactPage />} path="contact" />
       </Route>
     )
   );

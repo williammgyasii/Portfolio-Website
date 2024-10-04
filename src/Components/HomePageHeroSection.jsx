@@ -11,6 +11,7 @@ import svgLogo from "../Assets/welcome.svg";
 import { useNavigate } from "react-router-dom";
 import StarryBackgoundHover from "../AnimatedComponents/StarryBackgoundHover";
 import OpacityReveal from "../AnimatedComponents/OpacityReveal";
+import { IoMail } from "react-icons/io5";
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 
@@ -128,6 +129,23 @@ const HomePageHeroSection = () => {
             >
               View Resume
               <FiArrowRightCircle className="transition-transform group-hover:-rotate-45 group-active:-rotate-12" />
+            </motion.button>
+            <motion.button
+              style={{
+                border,
+                boxShadow,
+              }}
+              whileHover={{
+                scale: 1.015,
+              }}
+              whileTap={{
+                scale: 0.985,
+              }}
+              onClick={() => navigate("/contact")}
+              className="relative cursor-pointer flex w-fit items-center gap-1.5 xs:text-xs rounded-md bg-gray-950/10 px-5 py-3 text-gray-50 transition-colors hover:bg-gray-950/50"
+            >
+              Contact Me
+              <IoMail className="transition-transform group-hover:-rotate-45 group-active:-rotate-12" />
             </motion.button>
           </div>
         </motion.div>
