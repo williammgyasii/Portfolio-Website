@@ -100,11 +100,10 @@ const HomePageHeroSection = () => {
           </span> */}
           </p>
           <img src={svgLogo} alt="SVG Image" className="animated-svg" />
-          <div className="flex gap-2  w-full justify-center  mt-4">
+          <div className="flex gap-2 md:space-y-2 w-full justify-center  mt-4 md:flex-col md:justify-center md:items-center">
             <motion.button
               onClick={() => navigate("projects")}
               style={{
-                backgroundColor: "rgb(250 ,204 ,21)",
                 border,
                 boxShadow,
               }}
@@ -114,10 +113,13 @@ const HomePageHeroSection = () => {
               whileTap={{
                 scale: 0.985,
               }}
-              className="relative cursor-pointer flex w-fit items-center gap-1.5 w-fit rounded-md bg-green-950/10 px-5 py-3 xs:px-2 xs:text-xs text-yellow-50 transition-colors hover:bg-gray-950/50"
+              className="relative cursor-pointer flexitems-center gap-1.5
+               rounded-md bg-blue-800 px-5 py-3 xs:px-2 xs:text-base text-yellow-50 
+               transition-colors hover:bg-gray-950/50"
             >
               Projects
-              <FiArrowRightCircle className="transition-transform group-hover:-rotate-45 group-active:-rotate-12" />
+              <FiArrowRightCircle className="transition-transform 
+               group-hover:-rotate-45 group-active:-rotate-12 inline-block ml-2" />
             </motion.button>
             <motion.button
               style={{
@@ -131,7 +133,7 @@ const HomePageHeroSection = () => {
                 scale: 0.985,
               }}
               onClick={() => navigate("/about")}
-              className="relative cursor-pointer flex w-fit items-center gap-1.5 xs:text-xs rounded-md bg-gray-950/10 px-5 py-3 text-gray-50 transition-colors hover:bg-gray-950/50"
+              className="relative cursor-pointer flex w-fit items-center gap-1.5 xs:text-base bg-green-700 rounded-md px-5 py-3 text-gray-50 transition-colors hover:bg-gray-950/50"
             >
               View Resume
               <FiArrowRightCircle className="transition-transform group-hover:-rotate-45 group-active:-rotate-12" />
@@ -148,7 +150,7 @@ const HomePageHeroSection = () => {
                 scale: 0.985,
               }}
               onClick={openMail}
-              className="relative cursor-pointer flex w-fit items-center gap-1.5 xs:text-xs rounded-md bg-gray-950/10 px-5 py-3 text-gray-50 transition-colors hover:bg-gray-950/50"
+              className="relative cursor-pointer flex w-fit items-center gap-1.5 xs:text-base rounded-md bg-yellow-600 px-5 py-3 text-gray-50 transition-colors hover:bg-gray-950/50"
             >
               Contact Me
               <IoMail className="transition-transform group-hover:-rotate-45 group-active:-rotate-12" />
