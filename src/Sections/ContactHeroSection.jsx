@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   animate,
   motion,
@@ -13,10 +13,7 @@ import {
 } from "../AnimatedComponents/BentoProfile";
 import AnimatedVerticalView from "../AnimatedComponents/AnimatedVerticalView";
 import PageTitles from "../AnimatedComponents/PageTitles";
-import { getFirebaseFunctions } from "../Firebase/getFirebase";
-import { httpsCallable } from "firebase/functions";
-import { IoCheckmark } from "react-icons/io5";
-
+import emailjs from "@emailjs/browser";
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 
 const ContactHeroSection = () => {
@@ -24,6 +21,7 @@ const ContactHeroSection = () => {
   const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #020617 50%, ${color})`;
   const border = useMotionTemplate`1px solid ${color}`;
   const boxShadow = useMotionTemplate`0px 4px 24px ${color}`;
+  const form = useRef();
 
   useEffect(() => {
     animate(color, COLORS_TOP, {
@@ -57,24 +55,25 @@ const ContactHeroSection = () => {
     e.preventDefault();
     setLoading(true);
 
-    const sendEmail = httpsCallable(getFirebaseFunctions, "sendContactEmail");
-
-    try {
-      const result = await sendEmail(formData);
-      if (result.data.success) {
-        setSubmitted(true);
-        setFormData({
-          name: "",
-          email: "",
-          message: "",
-        });
-        setTimeout(() => setSubmitted(false), 3000);
-      }
-    } catch (error) {
-      console.error("Error sending email:", error);
-    } finally {
-      setLoading(false);
-    }
+    emailjs
+      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form.current, {
+        publicKey: "YOUR_PUBLIC_KEY",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+          setSubmitted(true);
+          setFormData({
+            name: "",
+            email: "",
+            message: "",
+          });
+          setTimeout(() => setSubmitted(false), 3000);
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
   };
 
   useEffect(() => {
@@ -108,7 +107,11 @@ const ContactHeroSection = () => {
           <p className="mb-3 text-2xl text-zinc-300 ">
             Bring your ideas to reality
           </p>
-          <form onSubmit={handleSubmit} className=" w-[70%] md:w-[95%] ">
+          <form
+            ref={form}
+            onSubmit={handleSubmit}
+            className=" w-[70%] md:w-[95%] "
+          >
             {/* Name Input */}
             <div className="mb-3 space-y-5">
               {/* <label
