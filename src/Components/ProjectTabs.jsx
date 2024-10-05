@@ -86,7 +86,7 @@ const ProjectTabs = () => {
 
       {/* Project Cards with spring animation */}
       <motion.div className="grid grid-cols-6 gap-6">
-        <AnimatePresence mode="wait">
+        <AnimatePresence>
           {paginatedProjects.map((project) => (
             <motion.div
               key={project.id}

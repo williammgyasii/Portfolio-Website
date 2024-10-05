@@ -64,11 +64,11 @@ function ExperienceSection() {
 
       <motion.div
         ref={ref}
-        className=" w-full flex flex-col items-center justify-center relative"
+        className=" w-full my-4 flex flex-col items-center justify-center relative"
       >
         {workExperience.map((job, index) => (
           <motion.div
-            className={`w-2/3 my-3 flex md:w-full md:mx-auto items-center`}
+            className={`w-2/3 mb-3 md:w-full md:mx-auto`}
             key={index}
             initial={{ opacity: 0 }} // Start with opacity 0 (invisible)
             whileInView={{ opacity: 1 }} // Fade in when in view
@@ -77,6 +77,7 @@ function ExperienceSection() {
             viewport={{ once: false, amount: 0.3 }} // Trigger on entering view and leaving view
           >
             <motion.div
+              key={index}
               style={{ border: border }}
               className="bg-white/90 p-4 shadow-lg rounded-lg w-full font-inter"
             >

@@ -213,12 +213,8 @@ const Navbar = () => {
             >
               {navLinks.map((link, index) => {
                 return (
-                  <div className="overflow-hidden">
-                    <MobileNavLink
-                      key={index.toString()}
-                      title={link.title}
-                      href={link.href}
-                    />
+                  <div key={index} className="overflow-hidden">
+                    <MobileNavLink title={link.title} href={link.href} />
                   </div>
                 );
               })}
