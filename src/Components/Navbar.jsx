@@ -39,7 +39,7 @@ const navLinks = [
   { title: "About", href: "about" },
   { title: "Projects", href: "projects" },
   { title: "Testimonials", href: "testimonials" },
-  { title: "Contact", href: "contact" },
+  // { title: "Contact", href: "contact" },
 ];
 
 const COLORS_TOP = ["#13FF9A", "#1E6aC6", "#CE34CF", "#DDc35C"];
@@ -150,7 +150,7 @@ const Navbar = () => {
           title={"Testimonials"}
           className="mx-2"
         />
-        <CustomLink href={"/contact"} title={"Contact"} className="mx-2" />
+        {/* <CustomLink href={"/contact"} title={"Contact"} className="mx-2" /> */}
       </nav>
 
       <nav className="mt-2 sm:hidden">

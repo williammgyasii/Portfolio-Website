@@ -14,10 +14,7 @@ import { workExperience } from "../Utilities/workExperience";
 
 function ExperienceSection() {
   const color = useMotionValue(COLORS_TOP[0]);
-  const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #020617 50%, ${color})`;
-  const border = useMotionTemplate`1px solid ${color}`;
-  const boxShadow = useMotionTemplate` 0px 4px 24px ${color}`;
-  const contentBorder = useMotionTemplate`1px solid ${color}`;
+  const border = useMotionTemplate`3px solid ${color}`;
   const controls = useAnimation(); // Control for the purple line animation
 
   const ref = useRef(null);
@@ -47,7 +44,7 @@ function ExperienceSection() {
   }, [controls]);
 
   return (
-    <CustomSection className={"mb-[10rem]"}>
+    <CustomSection className={"mb-[10rem]  md:px-4"}>
       <motion.h1
         style={{
           borderBottom: border,
@@ -69,16 +66,9 @@ function ExperienceSection() {
         ref={ref}
         className=" w-full flex flex-col items-center justify-center relative"
       >
-        {/* Vertical timeline purple line */}
-
-        <motion.div
-          className="absolute left-[10rem] "
-          style={{ width: "5px", height: "0px", border }} // Start at 0px height
-          animate={controls} // Controlled by scroll position
-        />
         {workExperience.map((job, index) => (
           <motion.div
-            className={`w-2/3 my-3 flex  items-center`}
+            className={`w-2/3 my-3 flex md:w-full md:mx-auto items-center`}
             key={index}
             initial={{ opacity: 0 }} // Start with opacity 0 (invisible)
             whileInView={{ opacity: 1 }} // Fade in when in view
@@ -86,17 +76,11 @@ function ExperienceSection() {
             transition={{ duration: 1, type: "spring" }} // Animation duration
             viewport={{ once: false, amount: 0.3 }} // Trigger on entering view and leaving view
           >
-            {/* Dot on the timeline */}
-            {/* <div className="w-4 h-4 left-[10rem] top-0 text-4xl bg-purple-500 rounded-full absolute left-1/2 transform -translate-x-1/2">
-            0{++index}
-          </div> */}
-
-            {/* Timeline content */}
             <motion.div
               style={{ border: border }}
-              className="bg-white/90 p-4 shadow-lg rounded-lg w-full md:w-10/12 font-inter"
+              className="bg-white/90 p-4 shadow-lg rounded-lg w-full font-inter"
             >
-              <h3 className="text-4xl text-primary font-bold">
+              <h3 className="text-4xl md:text-3xl text-primary font-bold">
                 {job.position}
               </h3>
               <h4 className="text-gray-700">{job.company}</h4>
@@ -106,7 +90,7 @@ function ExperienceSection() {
               </span>
 
               {/* Work description as bullet points */}
-              <ul className="mt-4 list-disc pl-5 text-gray-600">
+              <ul className="mt-2 md:text-sm list-disc pl-5 text-gray-600">
                 {job.description.map((desc, i) => (
                   <li key={i}>{desc}</li>
                 ))}

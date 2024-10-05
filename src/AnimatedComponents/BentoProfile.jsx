@@ -41,7 +41,7 @@ export const FirstColumn = () => (
   <>
     <div className="col-span-6 grid row-span-1 md:col-span-6 gap-2">
       <Block className={"col-span-6"}>
-        <h1 className="mb-3 text-xl font-light leading-tight md:text-sm">
+        <h1 className="mb-3 text-xl font-light leading-tight md:text-base">
           Hi, I’m William, a passionate front-end developer with over 4 years of
           experience
           <span className="text-zinc-400">
@@ -58,17 +58,23 @@ export const FirstColumn = () => (
         </a>
       </Block>
 
-      <Block className={"col-span-6 mt-2"}>
+      <Block className={"col-span-6 mt-2 "}>
         <h1 className=" text-xl font-light leading-tight text-center md:text-sm">
           I look forward to the opportunity to bring my skills and passion to
           your next project.
           <br />
-          <span className="text-zinc-400">
+          <span className="text-zinc-400 text-lg mt-1 md:leading-1 md:text-base">
             Whether I'm working on a website, mobile app, or other digital
             product, I bring my commitment to design excellence and
             user-centered thinking to every project I work on.{" "}
           </span>
         </h1>
+        <a
+          href="mailto:gyasi.wk@gmail.com"
+          className="flex items-center gap-1 mt-4 text-center text-yellow-300 hover:underline"
+        >
+          Connect With Me <FiArrowRight />
+        </a>
       </Block>
     </div>
   </>
@@ -93,7 +99,7 @@ export const SecondColumn = () => (
 
 export const ThirdColumn = () => (
   <>
-    <div className="col-span-2 grid md:col-auto ">
+    <div className="col-span-2 grid ">
       <Block
         whileHover={{
           rotate: "-2.5deg",
@@ -117,6 +123,7 @@ export const ThirdColumn = () => (
           >
             <a
               href={link.href}
+              target="_blank"
               className="grid h-full place-content-center text-3xl text-black"
             >
               {link.linkIcon}
