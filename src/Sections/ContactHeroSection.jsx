@@ -55,25 +55,36 @@ const ContactHeroSection = () => {
     e.preventDefault();
     setLoading(true);
 
-    emailjs
-      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form.current, {
-        publicKey: "YOUR_PUBLIC_KEY",
-      })
-      .then(
-        () => {
-          console.log("SUCCESS!");
-          setSubmitted(true);
-          setFormData({
-            name: "",
-            email: "",
-            message: "",
-          });
-          setTimeout(() => setSubmitted(false), 3000);
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-        }
-      );
+    const mailtoLink = `mailto:gyasi.wk@gmail.com`;
+    window.location.href = mailtoLink;
+
+    // emailjs
+    //   .sendForm(
+    //     process.env.REACT_APP_EMAIL_SERVICE_ID,
+    //     "contact_form",
+    //     form.current,
+    //     {
+    //       publicKey: process.env.REACT_APP_EMAIL_PUBLIC_KEY,
+    //     }
+    //   )
+    //   .then(
+    //     () => {
+    //       console.log("SUCCESS!");
+    //       setSubmitted(true);
+    //       setFormData({
+    //         name: "",
+    //         email: "",
+    //         message: "",
+    //       });
+    //       setTimeout(() => {
+    //         setSubmitted(false);
+    //         setLoading(false);
+    //       }, 3000);
+    //     },
+    //     (error) => {
+    //       console.log("FAILED...", error.text);
+    //     }
+    //   );
   };
 
   useEffect(() => {

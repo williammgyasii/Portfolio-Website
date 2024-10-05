@@ -51,6 +51,12 @@ const HomePageHeroSection = () => {
     };
   }, []);
 
+  function openMail() {
+    const email = "gyasi.wk@gmail.com"; // Your email address
+    const mailtoLink = `mailto:${email}`;
+    window.location.href = mailtoLink;
+  }
+
   const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #020617 50%, ${color})`;
   const border = useMotionTemplate`1px solid ${color}`;
   const boxShadow = useMotionTemplate`0px 4px 24px ${color}`;
@@ -141,7 +147,7 @@ const HomePageHeroSection = () => {
               whileTap={{
                 scale: 0.985,
               }}
-              onClick={() => navigate("/contact")}
+              onClick={openMail}
               className="relative cursor-pointer flex w-fit items-center gap-1.5 xs:text-xs rounded-md bg-gray-950/10 px-5 py-3 text-gray-50 transition-colors hover:bg-gray-950/50"
             >
               Contact Me
