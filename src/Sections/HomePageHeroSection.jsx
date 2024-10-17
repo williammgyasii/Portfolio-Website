@@ -150,7 +150,8 @@ const HomePageHeroSection = () => {
                 scale: 0.985,
               }}
               onClick={openMail}
-              className="relative cursor-pointer flex w-fit items-center gap-1.5 xs:text-base rounded-md bg-yellow-600 px-5 py-3 text-gray-50 transition-colors hover:bg-gray-950/50"
+              className="relative cursor-pointer flex w-fit items-center gap-1.5 xs:text-base 
+              rounded-md bg-yellow-600 px-5 py-3 text-gray-50 transition-colors hover:bg-gray-950/50"
             >
               Contact Me
               <IoMail className="transition-transform group-hover:-rotate-45 group-active:-rotate-12" />
