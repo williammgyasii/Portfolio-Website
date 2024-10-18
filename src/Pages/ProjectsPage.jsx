@@ -110,12 +110,13 @@ const ProjectsPage = () => {
               <FeatureBlock
                 imageSrc={fintapbanner}
                 title={"Fintap"}
-                description="A mobile group task management app that enhances productivity with unique features for team collaboration."
+                projectLink={"https://fintapp.framer.website/"}
+                description=" An platform designed for churches to track partnerships, record monetary contributions, and include a payment platform."
                 stack={["React", "Tailwind", "Redux", "Firebase"]}
                 className="col-span-3 row-span-5 "
               />
 
-              <FeatureBlock
+              {/* <FeatureBlock
                 title={"Akron 3"}
                 description="A mobile group task management app that enhances productivity with unique features for team collaboration."
                 stack={["React", "JavaScript", "CSS"]}
@@ -128,7 +129,7 @@ const ProjectsPage = () => {
                 stack={["React", "JavaScript", "CSS"]}
                 taller
                 className="col-span-3 row-span-5"
-              />
+              /> */}
             </motion.div>
           </SectionLayout>
         </AnimatePresence>
