@@ -6,9 +6,11 @@ function SectionLayout({ children, sectionId, className }) {
     <motion.section
       id={sectionId}
       style={{ zIndex: 10 }}
-      className={`items-center flex flex-col justify-center xs:mt-huge mt-xsHuge w-4/5 md:w-full ${className}`}
+      className={`items-center flex flex-col 
+        justify-center xs:mt-huge mt-xsHuge 
+        w-4/5 md:w-full ${className}`}
     >
-      <AnimatePresence>{children}</AnimatePresence>
+      {children}
     </motion.section>
   );
 }

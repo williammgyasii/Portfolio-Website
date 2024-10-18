@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import StarryBackgroundNoHover from "../AnimatedComponents/StarryBackground";
-import { animate, useMotionTemplate, useMotionValue } from "framer-motion";
+import {
+  animate,
+  AnimatePresence,
+  useMotionTemplate,
+  useMotionValue,
+} from "framer-motion";
 import { motion } from "framer-motion";
 import Navbar from "../Components/Navbar";
 import ProjectHeroSection from "../Components/ProjectHeroSection";
@@ -13,6 +18,8 @@ import { projects } from "../Utilities/projects";
 import ProjectBox from "../AnimatedComponents/ProjectBox";
 import SectionLayout from "../Layouts/SectionLayout";
 import ProjectTabs from "../Components/ProjectTabs";
+import PageTitles from "../AnimatedComponents/PageTitles";
+import { twMerge } from "tailwind-merge";
 
 const COLORS_TOP = [
   "#FF6F61", // Coral
@@ -60,16 +67,96 @@ const ProjectsPage = () => {
         style={{
           backgroundImage,
         }}
-        className=" flex flex-col bg-green-700 relative text-white w-full  items-center min-h-screen sm:p-1 "
+        className=" flex flex-col 
+        bg-green-700 relative text-white w-full  items-center min-h-screen sm:p-1 "
       >
         <StarryBackgroundNoHover />
-        <ProjectHeroSection />
 
-        <SectionLayout className={"mt-4"} sectionId={"#otherProjects"}>
-          <ProjectTabs />
-        </SectionLayout>
+        <AnimatePresence>
+          <SectionLayout
+            className={"mt-4 pb-[4rem] "}
+            sectionId={"#otherProjects"}
+          >
+            <AnimatedVerticalView>
+              <PageTitles text={"Some of my best WORKS!"} />
+            </AnimatedVerticalView>
+
+            <motion.div
+              initial="initial"
+              animate="animate"
+              transition={{
+                staggerChildren: 0.05,
+              }}
+              className="grid grid-cols-6 w-full grid-rows-12 h-[50rem]  gap-4 md:gap-2 px-[3rem] md:px-3 sm:px-1"
+            >
+              <FeatureBlock
+    
+                height="20rem"
+                boxShadow={boxShadow}
+                className="col-span-3 row-span-5 bg-[#854DFF]"
+              >
+                1
+              </FeatureBlock>
+              <FeatureBlock
+                height="25rem"
+                className="col-span-3 row-span-6  col-start-4"
+              >
+                2
+              </FeatureBlock>
+              <FeatureBlock className="col-span-3 row-start-6 col-start-1 row-span-6">
+                3
+              </FeatureBlock>
+              <FeatureBlock
+                height="25rem"
+                className="col-span-3 row-span-6  col-start-4"
+              >
+                4
+              </FeatureBlock>
+            </motion.div>
+          </SectionLayout>
+        </AnimatePresence>
       </motion.main>
     </>
+  );
+};
+
+const FeatureBlock = ({
+  className,
+  taller,
+  short,
+  border,
+  shadow,
+  height = "5rem",
+  boxShadow,
+  ...rest
+}) => {
+  return (
+    <motion.div
+      style={{ border: border, boxShadow }}
+      variants={{
+        initial: {
+          scale: 0.5,
+          y: 50,
+          opacity: 0,
+        },
+        animate: {
+          scale: 1,
+          y: 0,
+          opacity: 1,
+        },
+      }}
+      transition={{
+        type: "spring",
+        mass: 3,
+        stiffness: 400,
+        damping: 50,
+      }}
+      className={twMerge(
+        "rounded-lg border-zinc-700 bg-zinc-800 p-4 sm:col-span-6",
+        className
+      )}
+      {...rest}
+    />
   );
 };
 
