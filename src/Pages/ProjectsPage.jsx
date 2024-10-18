@@ -21,6 +21,8 @@ import ProjectTabs from "../Components/ProjectTabs";
 import PageTitles from "../AnimatedComponents/PageTitles";
 import { twMerge } from "tailwind-merge";
 import akronbanner from "../Assets/Akronbanner.png";
+import { useNavigate } from "react-router-dom";
+import { FiArrowRightCircle } from "react-icons/fi";
 
 const COLORS_TOP = [
   "#FF6F61", // Coral
@@ -94,7 +96,8 @@ const ProjectsPage = () => {
               <FeatureBlock
                 bgColor={color}
                 taller
-                title={"Akron-Group Management App "}
+                textsize="small"
+                title={"Akron-Group Task Management App "}
                 description="A mobile group task management app that enhances productivity with unique features for team collaboration."
                 stack={["React", "JavaScript", "CSS"]}
                 className="col-span-3 row-span-6"
@@ -138,6 +141,7 @@ const FeatureBlock = ({
   className,
   taller,
   short,
+  textsize,
   border,
   shadow,
   height = "5rem",
@@ -145,9 +149,18 @@ const FeatureBlock = ({
   bgColor = "bg-zinc-800",
   children,
   imageSrc,
+  projectLink,
+  stack,
+  description,
   title,
   ...rest
 }) => {
+  const navigate = useNavigate();
+  const sizes = {
+    small: "text-[1rem]",
+    large: "text-[4rem]",
+  };
+
   return (
     <motion.div
       style={{
@@ -194,9 +207,52 @@ const FeatureBlock = ({
           className="w-full h-full rounded-lg object-cover"
         />
       </div>
-      <div className="w-full flex flex-row items-center mt-4">
-        <span className="leading-snug text-xl font-sans font-normal text-zinc-100">{title}</span>
+      <span
+        className=" text-xl font-sans 
+      font-bold text-zinc-100 my-3"
+      >
+        {title}
+      </span>
+      <span
+        className="leading-snug font-thin text-balance text-sm font-sans 
+   text-zinc-100"
+      >
+        {description}
+      </span>
+
+      <div className="flex flex-row flex-wrap mt-1">
+        {stack.map((tech, index) => (
+          <div
+            key={index}
+            className="px-4 py-1 bg-zinc-700 mr-1 text-xs rounded-lg"
+          >
+            {tech}
+          </div>
+        ))}
       </div>
+
+      <motion.button
+        style={{
+          border,
+          boxShadow,
+        }}
+        whileHover={{
+          scale: 1.015,
+        }}
+        whileTap={{
+          scale: 0.985,
+        }}
+        onClick={() => navigate(projectLink)}
+        className="relative  cursor-pointer flex w-fit 
+          items-center gap-1.5 xs:text-base bg-green-700 rounded-md
+           text-gray-50 transition-colors hover:bg-gray-950/50"
+      >
+        View Project
+        <FiArrowRightCircle
+          className="transition-transform 
+          group-hover:-rotate-45 group-active:-rotate-12"
+        />
+      </motion.button>
       {children}
     </motion.div>
   );
