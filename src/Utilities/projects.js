@@ -8,6 +8,7 @@ export const projects = [
     technologies: ["React", "JavaScript", "CSS"],
     projectLink: "https://example.com",
     isFeatured: false,
+    taller: true,
   },
   {
     imageSrc: localImage,

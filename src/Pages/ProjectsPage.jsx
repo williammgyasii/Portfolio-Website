@@ -20,6 +20,7 @@ import SectionLayout from "../Layouts/SectionLayout";
 import ProjectTabs from "../Components/ProjectTabs";
 import PageTitles from "../AnimatedComponents/PageTitles";
 import { twMerge } from "tailwind-merge";
+import akronbanner from "../Assets/Akronbanner.png";
 
 const COLORS_TOP = [
   "#FF6F61", // Coral
@@ -87,31 +88,20 @@ const ProjectsPage = () => {
               transition={{
                 staggerChildren: 0.05,
               }}
-              className="grid grid-cols-6 w-full grid-rows-12 h-[50rem]  gap-4 md:gap-2 px-[3rem] md:px-3 sm:px-1"
+              className="grid grid-flow-col w-full 
+              gap-4 md:gap-2 px-[5rem] md:px-3 sm:px-1"
             >
-              <FeatureBlock
-    
-                height="20rem"
-                boxShadow={boxShadow}
-                className="col-span-3 row-span-5 bg-[#854DFF]"
-              >
-                1
-              </FeatureBlock>
-              <FeatureBlock
-                height="25rem"
-                className="col-span-3 row-span-6  col-start-4"
-              >
-                2
-              </FeatureBlock>
-              <FeatureBlock className="col-span-3 row-start-6 col-start-1 row-span-6">
-                3
-              </FeatureBlock>
-              <FeatureBlock
-                height="25rem"
-                className="col-span-3 row-span-6  col-start-4"
-              >
-                4
-              </FeatureBlock>
+              {projects.map((item) => {
+                return (
+                  <FeatureBlock
+                    bgColor={color}
+                    taller={item?.taller}
+                    className="col-span-3"
+                  >
+                    1
+                  </FeatureBlock>
+                );
+              })}
             </motion.div>
           </SectionLayout>
         </AnimatePresence>
@@ -128,11 +118,20 @@ const FeatureBlock = ({
   shadow,
   height = "5rem",
   boxShadow,
+  bgColor = "bg-zinc-800",
+  children,
+  imageSrc,
+  title,
   ...rest
 }) => {
   return (
     <motion.div
-      style={{ border: border, boxShadow }}
+      style={{
+        border: border,
+        boxShadow: boxShadow,
+        backgroundColor: bgColor,
+        height: taller ? "25rem" : "20rem",
+      }}
       variants={{
         initial: {
           scale: 0.5,
@@ -152,11 +151,22 @@ const FeatureBlock = ({
         damping: 50,
       }}
       className={twMerge(
-        "rounded-lg border-zinc-700 bg-zinc-800 p-4 sm:col-span-6",
+        `rounded-lg border-zinc-700 ${bgColor} p-4 sm:col-span-6`,
         className
       )}
       {...rest}
-    />
+    >
+      {/* <div className={`sm:w-full w-full  relative overflow-hidden rounded-lg`}>
+        <img
+          src={imageSrc || akronbanner}
+          alt={`${title} Image`}
+          style={{ objectPosition: "center 25%" }} // Adjust as needed
+          // style={{ backgroundPosition: "center center" }}
+          className="w-full h-full rounded-lg object-cover"
+        />
+      </div> */}
+      {children}
+    </motion.div>
   );
 };
 
