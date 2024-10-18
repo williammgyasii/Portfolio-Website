@@ -88,20 +88,44 @@ const ProjectsPage = () => {
               transition={{
                 staggerChildren: 0.05,
               }}
-              className="grid grid-flow-col w-full 
-              gap-4 md:gap-2 px-[5rem] md:px-3 sm:px-1"
+              className="grid grid-cols-6 grid-rows-12 h-[60rem] w-full 
+              gap-4 md:gap-2 px-[8rem] md:px-3 sm:px-1"
             >
-              {projects.map((item) => {
-                return (
-                  <FeatureBlock
-                    bgColor={color}
-                    taller={item?.taller}
-                    className="col-span-3"
-                  >
-                    1
-                  </FeatureBlock>
-                );
-              })}
+              <FeatureBlock
+                bgColor={color}
+                taller
+                title={"Akron-Group Management App "}
+                description="A mobile group task management app that enhances productivity with unique features for team collaboration."
+                stack={["React", "JavaScript", "CSS"]}
+                className="col-span-3 row-span-6"
+              >
+                1
+              </FeatureBlock>
+              <FeatureBlock
+                title={"Akron"}
+                description="A mobile group task management app that enhances productivity with unique features for team collaboration."
+                stack={["React", "JavaScript", "CSS"]}
+                className="col-span-3 row-span-5 "
+              >
+                2
+              </FeatureBlock>
+              <FeatureBlock
+                title={"Akron"}
+                description="A mobile group task management app that enhances productivity with unique features for team collaboration."
+                stack={["React", "JavaScript", "CSS"]}
+                className="col-span-3 col-start-1 row-span-5"
+              >
+                3
+              </FeatureBlock>
+              <FeatureBlock
+                title={"Akron"}
+                description="A mobile group task management app that enhances productivity with unique features for team collaboration."
+                stack={["React", "JavaScript", "CSS"]}
+                taller
+                className="col-span-3 row-span-6 col-start-4 row-start-6"
+              >
+                4
+              </FeatureBlock>
             </motion.div>
           </SectionLayout>
         </AnimatePresence>
@@ -130,7 +154,7 @@ const FeatureBlock = ({
         border: border,
         boxShadow: boxShadow,
         backgroundColor: bgColor,
-        height: taller ? "25rem" : "20rem",
+        // height: taller ? "25rem" : "20rem",
       }}
       variants={{
         initial: {
@@ -151,12 +175,17 @@ const FeatureBlock = ({
         damping: 50,
       }}
       className={twMerge(
-        `rounded-lg border-zinc-700 ${bgColor} p-4 sm:col-span-6`,
+        `rounded-lg border-zinc-700 flex flex-col items-start justify-start
+         bg-zinc-800 p-3 sm:col-span-6`,
         className
       )}
       {...rest}
     >
-      {/* <div className={`sm:w-full w-full  relative overflow-hidden rounded-lg`}>
+      <div
+        className={`sm:w-full ${
+          taller ? "h-[70%]" : "h-[60%]"
+        }  relative w-full overflow-hidden rounded-lg`}
+      >
         <img
           src={imageSrc || akronbanner}
           alt={`${title} Image`}
@@ -164,7 +193,10 @@ const FeatureBlock = ({
           // style={{ backgroundPosition: "center center" }}
           className="w-full h-full rounded-lg object-cover"
         />
-      </div> */}
+      </div>
+      <div className="w-full flex flex-row items-center mt-4">
+        <span className="leading-snug text-xl font-sans font-normal text-zinc-100">{title}</span>
+      </div>
       {children}
     </motion.div>
   );

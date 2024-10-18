@@ -145,11 +145,11 @@ const Navbar = () => {
         <CustomLink href="/" title={"Home"} className="mr-2" />
         <CustomLink href="/about" title={"About"} className="mx-2" />
         <CustomLink href="/projects" title={"Projects"} className="mx-2" />
-        <CustomLink
+        {/* <CustomLink
           href="/testimonials"
           title={"Testimonials"}
           className="mx-2"
-        />
+        /> */}
         {/* <CustomLink href={"/contact"} title={"Contact"} className="mx-2" /> */}
       </nav>
 
