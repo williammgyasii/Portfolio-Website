@@ -79,7 +79,7 @@ const ProjectsPage = () => {
 
         <AnimatePresence>
           <SectionLayout
-            className={"mt-4 pb-[4rem] h-full "}
+            className={"mt-[0.8rem] pb-[4rem] min-h-screen "}
             sectionId={"#otherProjects"}
           >
             <AnimatedVerticalView>
@@ -93,7 +93,7 @@ const ProjectsPage = () => {
                 staggerChildren: 0.05,
               }}
               className="grid grid-cols-6 w-full 
-              gap-4 md:gap-2 px-[4rem] md:px-3 sm:px-1 "
+              gap-4 md:gap-2 px-[4rem] md:px-3  sm:px-1 "
             >
               <FeatureBlock
                 bgColor={color}
@@ -190,7 +190,7 @@ const FeatureBlock = ({
       }}
       className={twMerge(
         `rounded-lg border-zinc-700 overflow-hidden flex flex-col items-start justify-start
-         bg-zinc-800 p-3 sm:col-span-6 relative sm:h-[30rem]`,
+         bg-zinc-800 p-3 sm:col-span-6 relative sm:h-[34rem]`,
         className
       )}
       {...rest}
@@ -221,7 +221,7 @@ const FeatureBlock = ({
         {description}
       </span>
 
-      <div className="flex  w-[70%] flex-row flex-wrap">
+      <div className="flex  w-[70%] sm:w-full flex-row flex-wrap">
         {stack.map((tech, index) => (
           <div
             key={index}
