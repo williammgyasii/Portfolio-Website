@@ -37,7 +37,7 @@ export const COLORS_TOP = [
   "#FF9A8B", // Peach
 ];
 
-const technologyIcons = {
+export const TechIcons = {
   HTML: <FaHtml5 className="text-orange-600 mr-2" />,
   CSS: <FaCss3Alt className="text-blue-600 mr-2" />,
   JavaScript: <FaJsSquare className="text-yellow-500 mr-2" />,

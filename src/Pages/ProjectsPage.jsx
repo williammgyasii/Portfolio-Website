@@ -21,8 +21,10 @@ import ProjectTabs from "../Components/ProjectTabs";
 import PageTitles from "../AnimatedComponents/PageTitles";
 import { twMerge } from "tailwind-merge";
 import akronbanner from "../Assets/Akronbanner.png";
+import fintapbanner from "../Assets/Fintap.png";
 import { useNavigate } from "react-router-dom";
 import { FiArrowRightCircle } from "react-icons/fi";
+import { TechIcons } from "../Utilities/Constants";
 
 const COLORS_TOP = [
   "#FF6F61", // Coral
@@ -71,13 +73,13 @@ const ProjectsPage = () => {
           backgroundImage,
         }}
         className=" flex flex-col 
-        bg-green-700 relative text-white w-full  items-center min-h-screen sm:p-1 "
+        bg-green-700 relative text-white w-full h-full items-center "
       >
         <StarryBackgroundNoHover />
 
         <AnimatePresence>
           <SectionLayout
-            className={"mt-4 pb-[4rem] "}
+            className={"mt-4 pb-[4rem] h-full "}
             sectionId={"#otherProjects"}
           >
             <AnimatedVerticalView>
@@ -90,45 +92,43 @@ const ProjectsPage = () => {
               transition={{
                 staggerChildren: 0.05,
               }}
-              className="grid grid-cols-6 grid-rows-12 h-[60rem] w-full 
-              gap-4 md:gap-2 px-[8rem] md:px-3 sm:px-1"
+              className="grid grid-cols-6 w-full 
+              gap-4 md:gap-2 px-[4rem] md:px-3 sm:px-1 "
             >
               <FeatureBlock
                 bgColor={color}
                 taller
+                imageSrc={akronbanner}
                 textsize="small"
+                projectLink={"https://akron.framer.website/"}
                 title={"Akron-Group Task Management App "}
+                description="A mobile group task management app that enhances productivity with unique features for team collaboration."
+                stack={["ReactNative", "Redux", "Firebase"]}
+                className="col-span-3 row-span-7"
+              />
+
+              <FeatureBlock
+                imageSrc={fintapbanner}
+                title={"Fintap"}
+                description="A mobile group task management app that enhances productivity with unique features for team collaboration."
+                stack={["React", "Tailwind", "Redux", "Firebase"]}
+                className="col-span-3 row-span-5 "
+              />
+
+              <FeatureBlock
+                title={"Akron 3"}
                 description="A mobile group task management app that enhances productivity with unique features for team collaboration."
                 stack={["React", "JavaScript", "CSS"]}
                 className="col-span-3 row-span-6"
-              >
-                1
-              </FeatureBlock>
+              />
+
               <FeatureBlock
-                title={"Akron"}
-                description="A mobile group task management app that enhances productivity with unique features for team collaboration."
-                stack={["React", "JavaScript", "CSS"]}
-                className="col-span-3 row-span-5 "
-              >
-                2
-              </FeatureBlock>
-              <FeatureBlock
-                title={"Akron"}
-                description="A mobile group task management app that enhances productivity with unique features for team collaboration."
-                stack={["React", "JavaScript", "CSS"]}
-                className="col-span-3 col-start-1 row-span-5"
-              >
-                3
-              </FeatureBlock>
-              <FeatureBlock
-                title={"Akron"}
+                title={"Akron 4"}
                 description="A mobile group task management app that enhances productivity with unique features for team collaboration."
                 stack={["React", "JavaScript", "CSS"]}
                 taller
-                className="col-span-3 row-span-6 col-start-4 row-start-6"
-              >
-                4
-              </FeatureBlock>
+                className="col-span-3 row-span-5"
+              />
             </motion.div>
           </SectionLayout>
         </AnimatePresence>
@@ -188,15 +188,15 @@ const FeatureBlock = ({
         damping: 50,
       }}
       className={twMerge(
-        `rounded-lg border-zinc-700 flex flex-col items-start justify-start
-         bg-zinc-800 p-3 sm:col-span-6`,
+        `rounded-lg border-zinc-700 overflow-hidden flex flex-col items-start justify-start
+         bg-zinc-800 p-3 sm:col-span-6 relative sm:h-[30rem]`,
         className
       )}
       {...rest}
     >
       <div
         className={`sm:w-full ${
-          taller ? "h-[70%]" : "h-[60%]"
+          taller ? "h-[20rem]" : "h-[17rem]"
         }  relative w-full overflow-hidden rounded-lg`}
       >
         <img
@@ -209,23 +209,24 @@ const FeatureBlock = ({
       </div>
       <span
         className=" text-xl font-sans 
-      font-bold text-zinc-100 my-3"
+      font-bold text-zinc-100 mt-3"
       >
         {title}
       </span>
       <span
         className="leading-snug font-thin text-balance text-sm font-sans 
-   text-zinc-100"
+   text-zinc-100 mb-2"
       >
         {description}
       </span>
 
-      <div className="flex flex-row flex-wrap mt-1">
+      <div className="flex  w-[70%] flex-row flex-wrap">
         {stack.map((tech, index) => (
           <div
             key={index}
-            className="px-4 py-1 bg-zinc-700 mr-1 text-xs rounded-lg"
+            className="px-2 py-1 bg-zinc-700 mr-1 text-xs rounded-lg flex-row flex items-center mb-1"
           >
+            {TechIcons[tech]}
             {tech}
           </div>
         ))}
@@ -242,10 +243,12 @@ const FeatureBlock = ({
         whileTap={{
           scale: 0.985,
         }}
-        onClick={() => navigate(projectLink)}
-        className="relative  cursor-pointer flex w-fit 
-          items-center gap-1.5 xs:text-base bg-green-700 rounded-md
-           text-gray-50 transition-colors hover:bg-gray-950/50"
+        onClick={() =>
+          window.open(projectLink, "_blank", "noopener,noreferrer")
+        }
+        className="absolute -bottom-1 -right-1 px-6 py-2  cursor-pointer flex w-fit 
+          items-center gap-1.5 xs:text-base text-sm bg-green-700 rounded-md
+           text-gray-50 transition-colors hover:bg-gray-950/50 "
       >
         View Project
         <FiArrowRightCircle
@@ -253,7 +256,6 @@ const FeatureBlock = ({
           group-hover:-rotate-45 group-active:-rotate-12"
         />
       </motion.button>
-      {children}
     </motion.div>
   );
 };
