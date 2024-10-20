@@ -7,21 +7,15 @@ import {
   useMotionValue,
 } from "framer-motion";
 import { motion } from "framer-motion";
-import Navbar from "../Components/Navbar";
-import ProjectHeroSection from "../Components/ProjectHeroSection";
-import FeatureProject from "../AnimatedComponents/FeaturedProject";
-import AnimatedText from "../AnimatedComponents/AnimatedVerticalView";
 import Header from "../Components/Header";
-import FeaturedProject from "../AnimatedComponents/FeaturedProject";
 import AnimatedVerticalView from "../AnimatedComponents/AnimatedVerticalView";
-import { projects } from "../Utilities/projects";
-import ProjectBox from "../AnimatedComponents/ProjectBox";
+
 import SectionLayout from "../Layouts/SectionLayout";
-import ProjectTabs from "../Components/ProjectTabs";
 import PageTitles from "../AnimatedComponents/PageTitles";
 import { twMerge } from "tailwind-merge";
 import akronbanner from "../Assets/Akronbanner.png";
 import fintapbanner from "../Assets/Fintap.png";
+import dressupbanner from "../Assets/dressup.jpg"
 import { useNavigate } from "react-router-dom";
 import { FiArrowRightCircle } from "react-icons/fi";
 import { TechIcons } from "../Utilities/Constants";
@@ -104,7 +98,7 @@ const ProjectsPage = () => {
                 title={"Akron-Group Task Management App "}
                 description="A mobile group task management app that enhances productivity with unique features for team collaboration."
                 stack={["ReactNative", "Redux", "Firebase"]}
-                className="col-span-3 row-span-7"
+                className="col-span-3 row-span-6"
               />
 
               <FeatureBlock
@@ -117,12 +111,12 @@ const ProjectsPage = () => {
               />
 
 <FeatureBlock
-                imageSrc={fintapbanner}
+                imageSrc={dressupbanner}
                 title={"Dressup - Mobile App"}
                 projectLink={"https://dressup.framer.website/"}
-                description=" DRESSUP helps people with outfit planning, offering AI-generated styling suggestions. The platform includes features like virtual wardrobe management, event-based outfit planning, and integration with shopping options. It also collaborates with fashion retailers and influencers, enabling users to buy clothes based on AI recommendations or trend"
+                description=" DRESSUP helps people with outfit planning, offering AI-generated styling suggestions. The platform includes features like virtual wardrobe management, event-based outfit planning, and integration with shopping options."
                 stack={["React", "Tailwind", "Redux", "Firebase"]}
-                className="col-span-3 row-span-5 "
+                className="col-span-3 row-span-4 "
               />
 
               {/* <FeatureBlock
