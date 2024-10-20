@@ -116,6 +116,15 @@ const ProjectsPage = () => {
                 className="col-span-3 row-span-5 "
               />
 
+<FeatureBlock
+                imageSrc={fintapbanner}
+                title={"Dressup - Mobile App"}
+                projectLink={"https://dressup.framer.website/"}
+                description=" DRESSUP helps people with outfit planning, offering AI-generated styling suggestions. The platform includes features like virtual wardrobe management, event-based outfit planning, and integration with shopping options. It also collaborates with fashion retailers and influencers, enabling users to buy clothes based on AI recommendations or trend"
+                stack={["React", "Tailwind", "Redux", "Firebase"]}
+                className="col-span-3 row-span-5 "
+              />
+
               {/* <FeatureBlock
                 title={"Akron 3"}
                 description="A mobile group task management app that enhances productivity with unique features for team collaboration."
