@@ -19,6 +19,7 @@ import {
   SiFirebase,
   SiGulp,
   SiMui,
+  SiNextdotjs,
   SiRedux,
   SiTailwindcss,
   SiTypescript,
@@ -62,5 +63,6 @@ export const TechIcons = {
   Android: <IoLogoAndroid className="text-green-500 mr-2" />,
   MaterialUI: <SiMui className="text-blue-500 mr-2" />,
   Firebase: <SiFirebase className="text-yellow-500 mr-2" />,
+  NextJS: <SiNextdotjs className="text-green-500" />,
   // Add more technologies and their corresponding icons here
 };
