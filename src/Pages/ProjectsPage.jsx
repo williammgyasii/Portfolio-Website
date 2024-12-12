@@ -91,7 +91,7 @@ const ProjectsPage = () => {
                 taller
                 imageSrc={fintapbanner}
                 textsize="small"
-                projectLink={"https://penny-server--akron-server.us-central1.hosted.app/"}
+                projectLink={"https://penny-server-web--penny-pilot-backend.us-central1.hosted.app/"}
                 title={"Penny Pilot"}
                 description="A comprehensive financial health platform for everyone and professionals, enabling effective budgeting, income forecasting, and spending insights to improve financial stability and decision-making."
                 stack={["Next.js", "Redux", "Firebase"]}
